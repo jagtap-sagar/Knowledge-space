@@ -1,0 +1,90 @@
+ Once you define a static data member, it exists even though no objects of the static data member's class exist. It have external linkage
+
+
+
+
+
+
+
+Singleton example of static variables
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+class Singleton {
+
+  private:
+
+  static int* i;
+
+  static Singleton *instance;
+
+  
+
+  Singleton() {}
+
+  Singleton(const Singleton& ) {}
+
+  Singleton* operator = (const Singleton & ) { return this;} //U did wrong here, read operator =
+
+  public:
+
+  static Singleton* getInstance() {
+
+      if (instance == NULL) {
+
+          instance =new Singleton();
+
+      }
+
+      return instance; 
+
+  }
+
+  void Display() {
+
+      cout<< " Singleton Display";
+
+  }
+
+};
+
+
+
+Singleton* Singleton::instance = NULL; // U did Wrong here , how initialize pointers
+
+int*  Singleton::i=NULL;
+
+
+
+int main() {
+
+    Singleton::getInstance()->Display();
+
+}
+
+
+
+/// thread safe singleton class
+
+double checked locking'
+
+https://stackoverflow.com/questions/2576022/efficient-thread-safe-singleton-in-c
+
+ if(inst == NULL)
+  {
+    pthread_mutex_lock(&mutex);
+    if(inst == NULL)
+      inst = new Singleton();
+    pthread_mutex_unlock(&mutex);
+  }
+  return *inst;    
+ 
+
+
+What is way create object on heap only  Not  on stack ?

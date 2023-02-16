@@ -1,0 +1,90 @@
+ /******************************************************************************
+
+
+
+                            Online C Compiler.
+
+                Code, Compile, Run and Debug C program online.
+
+Write your code in this editor and press "Run" button to compile and execute it.
+
+
+
+*******************************************************************************/
+
+
+
+#include <stdio.h>
+
+#include <iostream>
+
+using namespace std;
+
+
+
+class func_overloading {
+
+  
+
+  public:
+
+  void Display() const {
+
+      cout<<"\n const Dispaly\n";
+
+  }
+
+  void Display() {
+
+      cout<<"\n Nonconst Dispaly\n";
+
+  }
+
+ void setCount(const int& i) {
+
+        cout<<" const SetCount\n";
+
+        count = i;
+
+    }
+
+    
+
+    void setCount( int & i) {
+
+        cout<<" Non const setCount\n";
+
+        count = i;
+
+    }
+
+};
+
+int main()
+
+{
+
+    func_overloading obj ;
+
+    obj.Display();///It call Non const function 
+
+
+
+    const func_overloading obj1 ;
+
+    obj1.Display(); // it call const function
+
+
+
+    const int j =10;
+
+    obj.setCount(j);
+
+     int k =10;
+
+    obj.setCount(k);   // This function overloaded only if it has reference, See defination 
+
+  return 0;
+
+}
+

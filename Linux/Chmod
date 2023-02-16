@@ -1,0 +1,22 @@
+chmod 755 filename
+
+7 - 1st decimal for owner
+
+5 - 2nd decimal for group
+
+5  - 3rd decimal for other
+
+In Linux there are 3 permission , Read(r) , write(w), execute(x)  
+
+for read(r) - value is 4 , similarly Write(w) is 2, Execute(x) 1.  
+
+See above example    chmod 755   filename 
+
+1. 7 -    rwx  -> 4+2+1 ->owner
+
+2. 5 -    r-x  ->4+0+1  -> group
+
+3.5 -    r-x ->4+0+1  -> others.
+
+Now similarly  other example  chmod 777 filename  -  4+2+1 = 7 , it has rwx permission to owner, group, others. 
+

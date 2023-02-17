@@ -1,26 +1,31 @@
 1. Linear recursion
 before & after function calling there some code to execute. A function is calling only one time.
     fun(n) {
-    ----
-    ----
-    ----
-    fun(n-1)
-    ----
-    ----
-    ----
+    if (cond) {
+        ----
+        ----
+        ----
+        fun(n-1)
+        ----
+        ----
+        ----
+      }  
     }
     
 2. tree recursion
 before & after function calling there some code to execute. A function is calling TWO time.
   fun(n) {                          fun(n) {
+  if (cond)                            if(cond) {
     ----                                ----
     ----                                ----
     ----                                fun(n-1)
     fun(n-1)                            fun(n-1)
     ----                                -----
     ----                                ---
+                                     }
     ----                            }
     fun(n-1)
     ----
     ----
     }
+}

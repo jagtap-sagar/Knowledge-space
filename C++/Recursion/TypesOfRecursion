@@ -12,14 +12,14 @@ before & after function calling there some code to execute. A function is callin
     
 2. tree recursion
 before & after function calling there some code to execute. A function is calling TWO time.
-  fun(n) {
-    ----
-    ----
-    ----
-    fun(n-1)
-    ----
-    ----
-    ----
+  fun(n) {                          fun(n) {
+    ----                                ----
+    ----                                ----
+    ----                                fun(n-1)
+    fun(n-1)                            fun(n-1)
+    ----                                -----
+    ----                                ---
+    ----                            }
     fun(n-1)
     ----
     ----

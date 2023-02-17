@@ -29,3 +29,6 @@ before & after function calling there some code to execute. A function is callin
     ----
     }
 }
+
+3. Indirect Recursion 
+A->B->C->A  Or A->B->A  here calling is cyclic like A call B, B Call A. 

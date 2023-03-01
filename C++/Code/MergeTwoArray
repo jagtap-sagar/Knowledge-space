@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+void Merge(int *A,int Alen,int *B,int Blen){
+    int temp[Alen+Blen];
+    int k=0;
+    int i=0, j=0;
+    //for (; (i<Alen)||(j<Blen);){
+    for (; (i<Alen)&&(j<Blen);){    
+        if (A[i]<B[j]) {
+            temp[k++]=A[i++];
+        }
+        else {
+            temp[k++]=B[j++];
+        }
+    }//for
+    
+    for(;i<Alen;++i){
+        temp[k++]=A[i];
+    }
+    
+    for(;j<Alen;++j){
+        temp[k++]=B[j];
+    }
+    cout<<"\ntemp";
+     for (int i=0; i<10;++i) {
+         cout<<" "<<temp[i];
+     }
+}
+
+
+//Merge two arra for (int i=0; i<10;++i) {
+
+int main()
+{
+    int A[5]={3,5,6,8,10};
+    int B[5]={4,5,7,8,9};
+    cout<<"Hello World";
+    
+    int Alen = sizeof(A)/sizeof(A[0]);
+    int Blen = sizeof(B)/sizeof(B[0]);
+    Merge(A,Alen,B,Blen);
+    return 0;
+}

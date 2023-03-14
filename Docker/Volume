@@ -1,0 +1,2 @@
+When we create volume in container, that volume is shared across container.
+When u delete continer, volume is still there. volume not deleted.

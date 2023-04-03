@@ -1,0 +1,2 @@
+1. Rasberrypi OS -> oasberrypi.org
+motor contol -> adeept motor hat ->https://www.adeept.com/

@@ -1,0 +1,42 @@
+
+#include <iostream>
+
+using namespace std;
+
+//bubble sort , heavy ele (large) goes down like stone in water, light ele come up.
+void bubblesort(int *arr, int n)
+{
+    for(int i=0;i<n;++i){
+        for(int j=0; j<n;++j){
+            if(arr[j]>arr[j+1]){
+                //swap ele
+                int temp = arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+            cout<<"\n";
+            for(int i=0;i<n;++i){
+            cout<<" "<<arr[i];
+    }            
+        }
+    }
+    
+     for(int i=0;i<n;++i){
+        cout<<" "<<arr[i];
+    }
+   
+}
+
+int main()
+{
+    int arr[5] = {8,5,7,3,2};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    bubblesort(arr, size);
+    cout<<"Hello World\n";
+    for(int i=0;i<size;++i){
+        cout<<" "<<arr[i];
+    }
+    
+
+    return 0;
+}

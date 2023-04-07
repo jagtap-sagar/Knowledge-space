@@ -13,10 +13,10 @@ void bubblesort(int *arr, int n)
                 //swap ele
                 int temp = arr[j];
                 arr[j]=arr[j+1];
-                arr[j+1]=temp
+                arr[j+1]=temp;
             }
             
-        }/for j    
+        }//for j    
            cout<<"\n";
             for(int k=0;k<n;++k){
             cout<<" "<<arr[k];

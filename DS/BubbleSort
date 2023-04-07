@@ -7,20 +7,21 @@ using namespace std;
 //for second loop n-i, as large ele goes down so no need compare down ele that why  used n-i .
 void bubblesort(int *arr, int n)
 {
-    for(int i=0;i<n-i-1;++i){
-        for(int j=0; j<n;++j){
-            if(arr[j]>arr[j+1]){
+    for(int i=0;i<n;++i){
+        for(int j=0; j < n-i-1; ++j){
+            if(arr[j] > arr[j+1]){
                 //swap ele
-                int temp = arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+                int temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp
             }
-            cout<<"\n";
-            for(int i=0;i<n;++i){
-            cout<<" "<<arr[i];
-    }            
-        }
-    }
+            
+        }/for j    
+           cout<<"\n";
+            for(int k=0;k<n;++k){
+            cout<<" "<<arr[k];
+    }//for i
+  }
     
      for(int i=0;i<n;++i){
         cout<<" "<<arr[i];

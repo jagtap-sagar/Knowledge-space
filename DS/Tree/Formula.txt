@@ -1,0 +1,2 @@
+If hight is given of binary tree then, Max node of tree depend on hight= 2powr(h+1) -1
+If hight is given of binary tree then, min node = h+1

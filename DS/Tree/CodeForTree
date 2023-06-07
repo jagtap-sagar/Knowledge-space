@@ -11,7 +11,8 @@ Write your code in this editor and press "Run" button to compile and execute it.
 using namespace std;
 
 struct Tree {
-    struct Tree *left, *right;
+    struct Tree *left;
+    struct Tree *right;
     int data;
 };
 
@@ -38,6 +39,7 @@ int isFull(struct Queue *q) {
      cout<<"q is full";
      return -1;
     }    
+    return 0;
 }
 
 void enqueue(struct Queue *q, struct Tree *node) {
@@ -72,7 +74,28 @@ void createTree(struct Queue *q)
     
     //Now enter left & right child
     while(! isFull(q)) {
-        
+        //dequeue from Queue
+        struct Tree *parent = dequeue(q);
+        //left node
+        cout<<"\n Enter value for left node";
+        cin>>val;
+        if ( val != -1) { // left node NOT empty
+            struct Tree *temp = new Tree();
+            temp->data = val;
+            temp->left=temp->right=NULL;
+            parent->left =temp;
+            enqueue(q, temp);
+        }    
+        //right node
+        cout<<"\n Enter value for right node";
+        cin>>val;
+        if ( val != -1) { // right node NOT empty
+            struct Tree *temp = new Tree();
+            temp->data = val;
+            temp->left=temp->right=NULL;
+            parent->right =temp;
+            enqueue(q, temp);
+        }    
     }
     
 }

@@ -21,7 +21,7 @@ struct Tree *root;
 struct Queue {
     int size;
     int rear, front;
-    struct Tree *data[10];
+    struct Tree *data[6];
 };
 
 void initlize_q(struct Queue *q) {
@@ -71,15 +71,17 @@ void createTree(struct Queue *q)
     
     // enter root address in Queue 
     enqueue(q, root);
-    
+    int flag=1;
     //Now enter left & right child
-    while(! isFull(q)) {
+    while( (! isFull(q)) && flag) {
+        flag=0;
         //dequeue from Queue
         struct Tree *parent = dequeue(q);
         //left node
         cout<<"\n Enter value for left node";
         cin>>val;
         if ( val != -1) { // left node NOT empty
+            flag=1;
             struct Tree *temp = new Tree();
             temp->data = val;
             temp->left=temp->right=NULL;
@@ -90,6 +92,7 @@ void createTree(struct Queue *q)
         cout<<"\n Enter value for right node";
         cin>>val;
         if ( val != -1) { // right node NOT empty
+            flag=1;
             struct Tree *temp = new Tree();
             temp->data = val;
             temp->left=temp->right=NULL;

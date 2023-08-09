@@ -1,3 +1,4 @@
 1.  Go has byte & rune are aliases for uint8 and int32 data types, respectively.
 2. Go don't have char type, it used byte & rune 
 3. Byte  data type represents ASCII characters, rune is  data type represents Unicode characters
+4. The default type for character values is rune, which means, if we don't declare a type it rune as datatype.

@@ -5,3 +5,8 @@
    4. Data 
    5. Desktop 
    6. Server
+2. Exception handling (derive object, base pointer), memory leaks (memcheck), valgrid
+3. program revert string as "My name is Sagar" => revers => yM eman si ragaS"
+4. virtual base class, vector map -map add list as value
+5. iostream, ofstream, stringstream, copy constructor, deep/shallow copy. 
+6. Puzzle

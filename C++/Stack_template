@@ -1,0 +1,49 @@
+
+
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+const int SIZE = 100;
+template<class T>
+class Stack
+{
+ int top ;
+ T arr[SIZE];
+public :
+    Stack () {
+        top = -1;
+    }
+    
+    void push(T i)
+    {
+    if (top !=SIZE )
+     this->arr[++top] =i;
+    }
+    
+    T pop() {
+        if (top != -1 )
+            return (this->arr[top--]);
+           
+    }
+};
+
+int main()
+{
+    cout<<"Hello World";
+    Stack <int>int_stk;
+    
+    
+    int_stk.push(10);
+    cout << int_stk.pop();
+    
+    Stack<string> string_stack;
+    //Stack<string> string_stack;
+    string_stack.push("WelCome");
+    string_stack.push("Templete");
+    string_stack.push("Stack");
+    
+    cout<<string_stack.pop();
+    cout<<"\n"<<string_stack.pop();
+    return 0;
+}

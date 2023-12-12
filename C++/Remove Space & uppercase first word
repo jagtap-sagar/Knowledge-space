@@ -1,0 +1,44 @@
+/*
+I/p - > String input = "       this     is      a     beautiful     world"
+O/p -> String output= "This Is A Beautiful World"
+*/
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+int main() {
+string str ="    this    is  a    beautiful    world";
+string temp;
+int i=0;
+while( i< str.length()) {
+        if (str[i] == 32 )
+                ++i;
+        else {
+          if ((str[i-1]==32) && (str[i] !=32))
+                if (temp.empty() )
+                        //temp.append(str[i]);
+                        temp += toupper(str[i]);
+                        //append(temp,str[i] );//toupper(str[i]));
+                else{
+                    string t = " " +(toupper(str[i]));
+                    //cout<<"\n t="<<t;
+                    //temp += t;//" " +(toupper(str[i]));
+                        temp += " ";
+                        temp +=toupper(str[i]);//append(temp," "+toupper(str[i]));
+                }    
+          else
+                if (str[i] !=32)
+                 temp +=((str[i]));
+                 
+        ++i;         
+        }
+        
+}//for
+
+cout<<"temp"<< temp;
+return 0;
+}

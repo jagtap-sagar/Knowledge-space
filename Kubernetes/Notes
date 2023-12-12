@@ -1,0 +1,4 @@
+It is container mannagment tool for Dockers/any container.
+it is auto scaling ex. Cricket match. Also load balancing.
+Docker swarm is competation of kubernetes, It is also managment tool of Docker, it is created by Docker.
+Kubernates NOT create the image, Container create image.

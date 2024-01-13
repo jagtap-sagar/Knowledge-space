@@ -10,3 +10,5 @@
 4. virtual base class, vector map -map add list as value
 5. iostream, ofstream, stringstream, copy constructor, deep/shallow copy. 
 6. Puzzle
+7. In Go how to handle multiple event using switch OR Can switch handle if multiple event occurs.
+8. Write microservices.

@@ -1,0 +1,86 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+/*
+Input: s = “geeks quiz practice code” 
+Output: s = “code practice quiz geeks”
+
+Input: s = “i love programming very much” 
+Output: s = “much very programming love i”
+*/
+
+#include<iostream>
+#include<vector>
+#include<string>
+#include<stdio.h>
+#include <string.h>
+using namespace std;
+
+int tokenizer(string inputStr, string separator, vector<string> & tokens) 
+{
+	if (inputStr.empty() || separator.empty())
+		return -1;
+	int size = inputStr.size();
+	char tempArr[size+1];
+	tempArr[size] = '\0';
+	memcpy(tempArr, inputStr.c_str(), size);
+	string str;
+	char* tempStr = tempArr; // why pointer is used.
+	int i = 0;
+	while (tempStr[i] != '\0') {
+		size_t found = separator.find(tempStr[i]);
+		while (found == string::npos) {
+			if (tempStr[i] == '\0')
+				break;
+			str.append(1, tempStr[i++]);
+			found = separator.find(tempStr[i]);
+		}
+		
+		if (tempStr[i]=='\0'&& !str.empty()) {
+			tokens.push_back(str);
+			str.clear();
+			break;
+		} else if (found != string::npos && !str.empty()) {
+			tokens.push_back(str);
+			str.clear();
+		}
+		i++;
+	}
+	return 0;
+}
+
+
+int main()
+{
+	vector<string> Dest;
+
+	  string Source("1030     map     20080601020000.1        12845830:50304220:PUNE");
+	//string Source("Sagar S Jagtap");
+        cout << "start"<< endl;
+        //tokenizer(Source, ":,\t ", Dest);
+
+  
+  
+    tokenizer(Source, " ", Dest);
+	
+	for ( int i=0;i< Dest.size(); i++)
+	{
+		cout<<i<< "  "<< Dest[i]<<endl;
+		
+	}// for
+
+/*        tokenizer(Source, " ", Dest);
+	
+	for ( int i=0;i< Dest.size(); i++)
+	{
+		cout<<i<< "  "<< Dest[i]<<endl;
+		
+	}// for 
+*/	
+	
+	
+}

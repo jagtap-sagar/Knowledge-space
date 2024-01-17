@@ -12,3 +12,10 @@
 6. Puzzle
 7. In Go how to handle multiple event using switch OR Can switch handle if multiple event occurs.
 8. Write microservices.
+9. How to troubleshoot network issue ?
+=> 1. understand problem. 
+   2. Ping & traceroute command for network connectivity.
+   3. See it has any VPN connectivity .
+   4. check IPConfiguration like router IP, same family IP address. 
+   5. try with restart machine.
+   6. see the logs.

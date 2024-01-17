@@ -15,6 +15,7 @@
 9. How to troubleshoot network issue ?
 => 1. understand problem. 
    2. Ping & traceroute command for network connectivity.
+      https://www.youtube.com/watch?v=up3bcBLZS74
    3. See it has any VPN connectivity .
    4. check IPConfiguration like router IP, same family IP address. 
    5. try with restart machine.

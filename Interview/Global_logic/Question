@@ -1,0 +1,26 @@
+1. class has char * ptr data member, Write default, parameterized,copy construct ,assignment, move constructor, move assignment.
+=> *** I did mistake forgot destructor which lead to memory leak.
+2. trace the o/p
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char * ptr = "Sagar";
+	ptr[3] = 'd';
+	printf("%s\n",ptr);
+}
+=> segmation fault, why ?=> not allocating memory to ptr.  "Sagar" is in data segment which tempory created const variable, here we tried
+to accesss const pointer.
+3. correct code without allocating memory & no new temporary variables.
+=>  instead pointer used array
+int main()
+{
+	char  ptr[] = "Sagar";
+	ptr[3] = 'd';
+	printf("%s\n",ptr);
+}
+4. What is memory layout in RAM ? tell us sequnces of segment.
+5. Where is environment variables in memory segment?
+6.  what diff between c & c++?
+7. What pointer & reefercnce ?

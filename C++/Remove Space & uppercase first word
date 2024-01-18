@@ -21,6 +21,7 @@ while( i< str.length()) {
           if ((str[i-1]==32) && (str[i] !=32))
                 if (temp.empty() )
                         //temp.append(str[i]);
+                         // temp.append(1,toupper(str[i])); //*** This is correct way to append single char to string. *********
                         temp += toupper(str[i]);
                         //append(temp,str[i] );//toupper(str[i]));
                 else{

@@ -1,0 +1,56 @@
+/******************************************************************************
+
+copy, assignment using char pointer
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+#include <string.h>
+
+using namespace std;
+const int size =20;
+class stack {
+  public :
+  char *str;
+  
+  //default constructor
+  stack () {
+      str = new char [size];
+      string s = "My Stack ------------";
+      memcpy(str, s.c_str()  ,s.length());
+  }
+  //copy constructor 
+  stack (const stack & rhs) {
+      str = new char[strlen(rhs.str)];
+      memcpy(str,rhs.str,strlen(rhs.str));
+  }
+  //assignemnet operator
+  stack & operator = (const stack & rhs) {
+      if ( this !=&rhs) {
+          delete this->str;
+          this->str= new char [strlen(rhs.str)];
+          memcpy(str,rhs.str,strlen(rhs.str));
+      }
+      return *this;
+  }
+  
+  void print() const {
+      cout<<" str="<<str;
+  }
+};
+
+int main()
+{
+    stack st; //default
+    cout<<"sizeof"<<sizeof((st.str));
+    cout<<"\nstrlen"<<strlen(st.str);
+    cout<<"\n default constructor";st.print();
+    stack cstr = st; //copy constructor
+    cout<<"\n copy constructor";st.print();
+    stack ostr;
+    ostr = st;// assignemnet operator
+    cout<<"\n assignemnet operator";st.print();
+    cout<<"Hello World";
+
+    return 0;
+}

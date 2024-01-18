@@ -24,3 +24,15 @@ int main()
 5. Where is environment variables in memory segment?
 6.  what diff between c & c++?
 7. What pointer & reefercnce ?
+8. What int size in 32 & 64 byte machine?
+9. Trace the out put. 
+#include <iostream>
+using namespace std;
+
+class A{
+	static int x;
+	int y
+};
+int main(){
+	cout  << sizeof(class A) << endl; 
+}

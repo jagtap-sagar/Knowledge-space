@@ -1,0 +1,49 @@
+
+
+/* C++ program to Find the missing element
+i/p =>1, 3, 7, 5, 6, 2 
+o/p => 4
+
+1, 2, 3, 5
+4 is missing
+*/
+#include<iostream>
+using namespace std;
+
+void print(int *arr, int N) {
+    cout<<"\n";
+    for(int i = 0; i < N; i++){
+	    cout <<" "<<arr[i];
+	}
+}
+
+void findMissing(int arr[], int N)
+{
+    print(arr,N);
+  //create temp array, initlize to zero.
+  int temp[N+1] = {0}; 
+  print(temp,N+1);
+
+  // array element visisted set 1.
+  for (int i=0; i<N;++i) {
+      temp[arr[i] -1]=1;
+  }
+   print(temp,N+1);
+//now find not visisted index, add 1 as  array began with 0.
+  for (int i=0; i<N;++i) {
+      if (temp[i] ==0) {
+        cout<<" Ans=" <<i+1;    
+      }
+      
+  }
+  
+}
+
+/* Driver code */
+int main()
+{
+	int arr[] = {1, 2, 3, 5};//{ 1, 3, 7, 5, 6, 2 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	findMissing(arr, n);
+}
+

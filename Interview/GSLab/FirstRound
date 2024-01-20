@@ -1,0 +1,37 @@
+1. What are the oops concepts?
+2. Write Macro to set bit, send position as parameter.
+/*
+// 2    0010 => this position 
+//4 (this is given number) ->> 0100 => 0110 //
+*/
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+#define setbit(num,n) (num ^ n)   
+3. Write fact using recurtion. 
+int fact(int n) {
+    if (n == 1) 
+     return 1;
+    else 
+     return( n*fact(n-1) ); 
+}
+
+int main()
+// 2    0010
+//4 ->> 0100 => 0110
+
+//fact 
+
+{
+    printf("Hello World");
+    cout <<" " << setbit(4,2);
+
+    cout<< "\nfact= "<<fact(4);
+    return 0;
+}
+4. how to check process taking lots memory 
+=> top command
+5. how Makefile worked?
+6. what is tool used for debugging
+=> gdb 

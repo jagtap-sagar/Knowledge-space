@@ -1,15 +1,22 @@
 1. What are the oops concepts?
 2. Write Macro to set bit, send position as parameter.
+=> #define setbit(num,n) (num | n)   
 /*
 // 2    0010 => this position 
 //4 (this is given number) ->> 0100 => 0110 //
+https://www.codementor.io/@hbendali/c-c-macro-bit-operations-ztrat0et6
+#define bitset(byte,nbit)   ((byte) |=  (1<<(nbit)))
+#define bitclear(byte,nbit) ((byte) &= ~(1<<(nbit)))
+#define bitflip(byte,nbit)  ((byte) ^=  (1<<(nbit)))
+#define bitcheck(byte,nbit) ((byte) &   (1<<(nbit)))
 */
+3. Write fact using recurtion. 
 #include <stdio.h>
 #include <iostream>
 using namespace std;
 
 #define setbit(num,n) (num ^ n)   
-3. Write fact using recurtion. 
+
 int fact(int n) {
     if (n == 1) 
      return 1;

@@ -1,4 +1,6 @@
 What is differnce between abstraction & data hiding?
+=> abstraction hides internal implentation details and shows only importance service or functionality to outside world.
+data hiding-> data data from outside world. it directly access so it access like private, protected, public.
 What is encapulation?
 Reverse the link list?
 Find & replace without using string operation of find & replace.

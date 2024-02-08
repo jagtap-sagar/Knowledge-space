@@ -1,0 +1,11 @@
+https://stackoverflow.com/questions/18264673/stdunique-ptr-vs-stdshared-ptr-vs-stdweak-ptr-vs-stdauto-ptr-vs-raw-poin
+
+
+Raw Pointers: Only use if you really, really, really, really, know what you are doing and have carefully hidden usage behind an interface.
+std::auto_ptr: Obsolete never use.
+std::unique_ptr: Singleton pointer that transfers ownership upon assignment.
+std::shared_ptr: Reference counted pointer that does not transfer ownership upon assignment but increments its reference count.
+  When all references leave scope or are explicitly std::shared_ptr::reset the underlying deallocator is called.
+std::weak_ptr: A sub-type std::shared_ptr that does not increment the reference count and is invalidated when 
+  its parent std::shared_ptr no longer exists. May return and invalid reference. Always check before using.
+ 

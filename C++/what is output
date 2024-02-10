@@ -1,0 +1,57 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+class A {
+  static int i;
+  
+};
+int A::i = 10;
+
+/*int main()
+{
+    std::cout<<"Hello World";
+    std::cout<<"\n size="<<sizeof(A);
+    return 0;
+}
+*/
+
+
+#include <iostream> 
+using namespace std; 
+class X 
+{ 
+	public:   void foo() 
+	{ 
+		cout << "X::f "; 
+	} 
+	virtual void go() 
+	{ 
+		cout << "X::g "; 
+	} 
+}; 
+class Y: public X 
+	{ 
+		public: virtual void foo() 
+			{ 
+				cout << "Y::f "; 
+			} 
+		    void go() 
+			{ 
+				cout << "Y::g "; 
+			}	 
+	}; 
+int main() 
+{ 
+	X x; 
+	Y y; 
+	X& rx = y; 
+	rx.foo(); 
+	rx.go(); 
+	return 0; 
+} 

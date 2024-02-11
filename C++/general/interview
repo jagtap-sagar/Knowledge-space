@@ -24,3 +24,11 @@ bt (backtrack)
 
  bash -c 'echo core.%e.%p > /proc/sys/kernel/core_pattern'
 %e is for executable file name and %p is for pid.
+
+What is purpose of Initialization list ?
+=> it used to Initialization const & refernce of variables.
+   also used to Initialization of Base Class Members.
+
+What is upcasting, object slicing,  What is its purpose?
+Implication of smart pointer?
+What is difference between interface & abstract class

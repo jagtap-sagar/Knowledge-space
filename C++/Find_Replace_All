@@ -1,0 +1,40 @@
+/*
+
+
+str1.replace(position,length,replace_word);
+
+Parameters of C++ String replace() Function
+Position : The position defines the starting position of the substring of str1.
+length: The number of characters starting from the position to be replaced by another string.
+replace_word: replace_word is the string that will replace the substring of string str1.
+
+Input = "Hello World is somebody listing Hello World" 
+Search = "Hello",
+Replace = "Hi"
+Output = "Hi World is somebody listing Hi World" 
+
+*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void findAndReplace(string & source, const string &search, const string& replace) {
+    int pos = source.find(search);
+    while (pos !=string::npos) 
+    {
+        cout<<"pos="<<pos<<" ";
+        source.replace(pos,search.length(),replace);
+        pos = source.find(search,pos+1 );
+    }
+}
+
+int main()
+{
+    std::string str = "Hello World is somebody listing Hello World" ;//Boost Library is simple C++ Library";
+    std::cout<<str<<std::endl;
+    findAndReplace(str, "Hello", "Hi");
+    std::cout<<str<<std::endl;
+    return 0;
+}

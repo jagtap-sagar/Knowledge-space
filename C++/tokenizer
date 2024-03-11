@@ -84,3 +84,53 @@ int main()
 	
 	
 }
+
+
+====================================================
+/*
+More optimized code for tokenizer
+*/
+
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+void tokenizer(string src, string delimit, vector<string>& tokens) {
+    
+    int pos = src.find(delimit);
+    int i=0;
+    //while (src[i] != '\0'){
+        while (pos !=string::npos) {
+            int prev = pos;
+            //cout<<"\n prev pos"<<pos;
+            pos = src.find(delimit,pos+1);
+            if ((pos !=string::npos)&& (src[pos -1]  != delimit[0])){
+                              
+                //cout<<"\n inside pos"<<pos<<" "<<src.substr(prev,(pos-prev));
+                tokens.push_back(src.substr(prev,(pos-prev)));
+            }
+            
+    }
+    
+}
+
+
+int main()
+{
+    string src ="  Hi This       @  100  token Backup ";
+    string delimit = " ";
+    vector<string> tokens ;
+    std::cout<<"Hello World";
+    tokenizer(src,delimit, tokens);
+    
+    cout<<"\n src="<<src;
+    vector<string>::iterator it;
+    for(it = tokens.begin();it !=tokens.end();++it) {
+        cout<<"\ntokens"<<*it;
+    }
+    
+    return 0;
+}

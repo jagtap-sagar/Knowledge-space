@@ -43,7 +43,7 @@ void* printOdd(void *b)
      pthread_attr_init(&attr);
      pthread_create(&thread1,&attr,&printEven,NULL);
      pthread_create(&thread2,&attr,&printOdd, NULL);
-     pthread_join(thread1,&ptr);
-     pthread_join(thread2,&ptr);
+     pthread_join(thread1,(void **)&ptr);
+     pthread_join(thread2,(void **)&ptr);
      delete ptr;
  }

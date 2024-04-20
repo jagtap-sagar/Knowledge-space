@@ -1,4 +1,4 @@
-Add two numbers represented by two arrays
+# Add two numbers represented by two arrays
 /******************************************************
 Input : n = 3, m = 3
 a[] = { 1, 2, 3 }

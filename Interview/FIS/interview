@@ -1,0 +1,42 @@
+1. Design a System , you enter in room then light should be ON  also schedule  time like 10.00 am to 6.00pm 
+It should ON the light. Which Design pattern you used?
+2. What is class ?
+3. Write class for below code 
+
+    int main () {
+       myclass T("Temp")
+       myclass T2("T");
+       myclass T3 = T;
+       }
+4. What is diff mutex & semaphore, what is binary semaphore
+=> Thread who lock Mutex has resposibilty to unlock it, but not the case,In case samaphore one thread can lock other tread can unlock.
+5. What is critial section ?
+6. What is vector ?
+7. Add two vector , result put in third vector?
+Input : 
+        a[] = { 4, 5, 7 }
+        b[] = { 6, 7, 9 }
+Output : 1136
+8. Write copy construct , parameterised constructor
+class A {
+public: // if it private variable
+int a;
+
+};
+class B:public A {
+public: // if it private variable
+int i;
+
+}
+
+int main ()
+{
+    B obj (10,20);
+    B obj2= obj; 
+}
+
+9.  What two Thread Which print the sequence like 1,2,3,4,5?
+10. Remove data from vector ? when vector become invalidate?
+11. What is remove(v.erase) actually do?
+12. What remove return  
+13 . What is reveser iterator, write reverse iterator? is there any better way for iterator?

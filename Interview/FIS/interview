@@ -39,4 +39,5 @@ int main ()
 10. Remove data from vector ? when vector become invalidate?
 11. What is remove(v.erase) actually do?
 12. What remove return  
-13 . What is reveser iterator, write reverse iterator? is there any better way for iterator?
+13. What is reveser iterator, write reverse iterator? is there any better way for iterator?
+14. What happen when failed to allocate memory?

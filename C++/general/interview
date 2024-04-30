@@ -32,3 +32,16 @@ What is purpose of Initialization list ?
 What is upcasting, object slicing,  What is its purpose?
 Implication of smart pointer?
 What is difference between interface & abstract class
+=> interface class don't have mem varaible, where abstract class can have mem varaible
+
+how to access pointer member variable of class out side class with public access?
+=>
+class A{
+public:
+int *i; //how access i in main
+};
+
+int main(){
+ A obj;
+*(obj.i)=20;
+}

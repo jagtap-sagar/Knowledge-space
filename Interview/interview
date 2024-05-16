@@ -20,3 +20,16 @@
    4. check IPConfiguration like router IP, same family IP address. 
    5. try with restart machine.
    6. see the logs.
+10. find size of array without sizeof operator?
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int A[5] = {1,2,3,4,5};
+    cout<<"\n Sizeof="<<(char *)(&A+1)-(char *)(&A);
+    return 0;
+}
+

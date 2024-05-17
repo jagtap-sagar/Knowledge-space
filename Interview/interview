@@ -29,7 +29,15 @@ using namespace std;
 int main()
 {
     int A[5] = {1,2,3,4,5};
+    int size = *(&A+1)-A;//(char *)(&A+1) -(char *) (&A);
+    cout<<"Size="<<size;
     cout<<"\n Sizeof="<<(char *)(&A+1)-(char *)(&A);
     return 0;
 }
+Initialize the elements of the array.
+   &a => This is the pointer to array which points at the same memory address as a.
+   &a + 1 => It points at the address after the end of the array.
+   *(a+1) => Dereferencing to *(&a + 1) gives the address after the end of the last element.
+   *(a+1)-a => Subtract the pointer to the first element to get the length of the array.
+   Print the size.
 

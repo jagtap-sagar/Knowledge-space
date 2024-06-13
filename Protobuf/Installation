@@ -1,0 +1,12 @@
+1.Download protobuf 
+https://github.com/protocolbuffers/protobuf/releases/tag/v27.1
+2. protoc-27.1-win64.zip
+3. install exe 
+4. set system environment variable for above exe path at bin folder
+5.  basic example  
+	https://protobuf.dev/getting-started/gotutorial/
+	
+	
+2. Run below command for download & install 
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+3

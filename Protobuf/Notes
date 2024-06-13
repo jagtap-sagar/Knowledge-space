@@ -1,0 +1,2 @@
+serialize - > converting data into byte stream , de-serialize => byte stream to data
+byte stream can easily stored in a file, database, or sent over a network.

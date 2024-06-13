@@ -1,2 +1,6 @@
 serialize - > converting data into byte stream , de-serialize => byte stream to data
 byte stream can easily stored in a file, database, or sent over a network.
+tag Number is used 1 to 15 commanly used, It easy to encode into binary. 16 and above can used
+
+option go_package = "github.com/protocolbuffers/protobuf/examples/go/tutorialpb";
+in above line used at location actual .pb file will created

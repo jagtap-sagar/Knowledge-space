@@ -4,4 +4,6 @@
 4. The default type for character values is rune, which means, if we don't declare a type it rune as datatype.
 5. What is Defer & Panic in Golang 
 => https://www.youtube.com/playlist?list=PLS1QulWo1RIaRoN4vQQCYHWDuubEU8Vij
+6. Why range is not iterate over int 
+=> range specifically designed to iterate over collections like slices, arrays, maps, strings, and channels.
 

@@ -1,0 +1,32 @@
+1.	Package Declaration:
+·	Every Go file starts with a package declaration at the top.
+·	The package name is usually the same as the folder name (except for main).
+·	Executable programs must use package main.
+·	For Custom package , "your-module-name/utils" // Replace with your module name
+1.	Imports:
+·	Use import to access code from other packages (e.g., import "fmt").
+·	Import should from ur “myproject/mathutil “  till ur last folder , used “pwd “ command , all name lowwer case through your folder name “MyProject” use “myproject”
+·	import “myproject/internal/auth”
+1.	Visibility:
+·	Uppercase identifiers (e.g., Add, Calculate) are exported (public).
+·	Lowercase identifiers (e.g., add, calculate) are unexported (private).
+Directory Structure:
+apple@apples-MacBook-Pro GoPackage % tree
+.
+|____go.mod
+|____go.sum
+|____todos.json
+|____main.go
+|____utility
+   |____command.go
+   |____storage.go
+   |____TODO.go
+
+Copy
+myproject/
+├── go.mod
+├── main.go
+└── internal/
+    └── auth/
+        └── auth.go
+

@@ -1,1 +1,7 @@
-
+command for run the project 
+1.  go run ./ -List    
+2.  go run ./ -Add "Buy Ice Cream"
+3.  go run ./ -Del 1 
+4.  go run ./ -Toggle 2  
+5.  go run ./ -Edit "2:Go to walk"
+  

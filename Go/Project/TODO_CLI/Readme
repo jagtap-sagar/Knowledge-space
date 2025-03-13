@@ -1,3 +1,6 @@
+To download package 
+go get github.com/aquasecurity/table
+
 command for run the project 
 1.  go run ./ -List    
 2.  go run ./ -Add "Buy Ice Cream"

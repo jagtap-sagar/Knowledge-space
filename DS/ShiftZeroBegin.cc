@@ -2,6 +2,15 @@
 logic :  Two index read & write, both start from end ( reverse travelling). 
 Write index igonore zero (non zero) and shift value to left.
 *******************************************************************************/
+
+
+10	0	60	50	20	0	0	0	10	9
+									W R
+
+0	0	0	0	10	60	50	20	10	9
+R	R		W					W R	W R
+
+
 #include<iostream>
 using namespace std;
 

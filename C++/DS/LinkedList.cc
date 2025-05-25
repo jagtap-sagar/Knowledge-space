@@ -24,6 +24,14 @@ typedef  SingleLinkList node;
 // ListNode Node;  // Now 'Node' can be used as an alias for 'ListNode'
 
 
+void AddNode(Node*& head, int data){
+    Node *temp =head;
+    while(temp->next !=NULL){
+        temp=temp->next;
+    }
+    Node *newNode = new Node(data);
+    temp->next=newNode;
+}
 
 void InsertAtFront(node*& head,int param) {
     if (head==NULL) {

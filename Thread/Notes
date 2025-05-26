@@ -1,0 +1,6 @@
+1. What is a race condition, and how can it be avoided with pthreads?
+=> When  Multiple thread tring to access Shared resource concurrently, Execution order unpredictable. ie. order is non-deterministic.
+To avoid race condition below methods
+    1. Mutex : lock resources for exclusive access.
+    2. Conditional wait :coordinate thread 
+    3. Atomic Operations: Use atomic operations to avoid locking where possible.(TODO)

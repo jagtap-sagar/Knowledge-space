@@ -11,3 +11,12 @@ To avoid race condition below methods
     printf("Thread ID: %lu\n", (unsigned long)pthread_self());
     return NULL;
 }
+3. What is the difference between pthread_mutex_lock() and pthread_mutex_trylock()?
+=> pthread_mutex_lock - It block threading Until it is not avaliable.
+   pthread_mutex_trylock - It not block it return EBUSY  when  resource not avaliable. 
+4. What difference between Mutex & semaphor?
+=> Mutex - one thread at time,it provide exclusive access to a shared resource.
+    unlock only those thread who locked it.
+   Semaphore - control access to resoruce pool, allow to access multiple thread.
+            Any thread can release a semaphore.
+

@@ -19,4 +19,8 @@ To avoid race condition below methods
     unlock only those thread who locked it.
    Semaphore - control access to resoruce pool, allow to access multiple thread.
             Any thread can release a semaphore.
+5. General Rule for Condition Variables
+    Always use a while loop when checking a condition with pthread_cond_wait.
+    Never assume that waking up means the condition is satisfied.
+    This is a well-known best practice in multithreaded programming
 

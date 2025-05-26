@@ -4,3 +4,10 @@ To avoid race condition below methods
     1. Mutex : lock resources for exclusive access.
     2. Conditional wait :coordinate thread 
     3. Atomic Operations: Use atomic operations to avoid locking where possible.(TODO)
+2. What is the purpose of pthread_self()?
+=>it retrun thread ID of current running thread.
+   ex.
+    void* thread_func(void* arg) {
+    printf("Thread ID: %lu\n", (unsigned long)pthread_self());
+    return NULL;
+}

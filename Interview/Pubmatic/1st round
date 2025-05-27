@@ -1,1 +1,15 @@
+1. write fibbonacci series.
+2. what is time complexity & space complexity for fibbonacci.
+3. write sql Query
+computer sci , year 3rd 
+
+select name, MAX(CGPA) from student   where branch='comp sci' AND year ='3' 
+
+
+Hard disk and RAM ?
+Movie(MI - 7/8) : -> 6 GB
+RAM -> 4 GB,
+HDD -> 500GB
+Download = ? Yes (Sagar)
+Watch = ?
 

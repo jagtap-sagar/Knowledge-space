@@ -1,0 +1,13 @@
+Which of the following are equivalent to O(N)? Why?
+1.O(N + P), where P < X/2
+2. 0(2N)
+3.O(N + log N)
+4.O(N + M)
+=>
+Let's go through these.
+1.If P < X/2, then we know that N is the dominant term so we can drop the 0( P).
+answer is O(n)
+2 0(2N) is O(N) since we drop constants.
+3. O(N) dominant ,so we drop log N) ,so answer is O(N) 
+4. There is no established relationship between N and M, so we have to keep both variables in there.
+so answer is O(N) 

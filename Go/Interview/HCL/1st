@@ -1,4 +1,8 @@
 How to optimized post rest API
 how optimized go code.
 which message Q you used in docker communication
+  => NAT Message , why Extremely fast and lightweight.
 docker container restart then new IP got, how other container now your IP & port
+   =>1.  DNS resolution by Manually i.e in command line OR ymal file
+  2. Assign Static IP (but it very teddius task)
+  3. External Service Discovery Tools like etcd, or ZooKeeper to register and discover container IPs and ports dynamically.

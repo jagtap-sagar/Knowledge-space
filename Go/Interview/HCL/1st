@@ -7,3 +7,5 @@ docker container restart then new IP got, how other container now your IP & port
   2. Assign Static IP (but it very teddius task)
   3. External Service Discovery Tools like etcd, or ZooKeeper to register and discover container IPs and ports dynamically.
 what difference between go root & go path?
+what is diff between .go & .sum file.
+What is differnce between empty struct & empty interface ?

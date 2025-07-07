@@ -1,0 +1,114 @@
+1. findLength LL
+2. find middle of the LL findMiddleOftheLL
+3. don't change singature , int foo(int a, int b) write add, sub , mult , power
+=> used virual function , derived class is add, sub, mult,power
+4.
+
+#include <iostream>
+
+
+class Base {
+  virtual int  operation(int a, int b)=0;  
+};
+
+class Add : public Base {
+    public:
+     int  operation(int a, int b) {
+         return a+b;
+     }
+};
+
+
+class Sub : public Base {
+    public:
+     int  operation(int a, int b) {
+         return a-b;
+     }
+};
+
+
+class Mult : public Base {
+    public:
+     int  operation(int a, int b) {
+         return a*b;
+     }
+};
+
+
+class Div : public Base {
+    public:
+     int  operation(int a, int b) {
+         if (b==0) {
+             cout<<"operation not possible"
+             return 0;
+         }
+         return a/b;
+     }
+};
+
+
+int main () {
+    Base *bptr = new Div();
+    Base *bptr=  unique_ptr<Div>;
+    cout<<bptr->operation(10,2);
+    
+    
+   // Base *bptr = new Add();
+   Base *bptr=  unique_ptr<Add>;
+    cout<<bptr->operation(10,2);
+    
+    Base *bptr=  unique_ptr<Sub>;
+    //Base *bptr = new Sub();
+    cout<<bptr->operation(10,2);
+}
+node* findMiddleOftheLL(node* head) {
+    
+    
+    if ( head ==NULL ){
+        return 0;
+    }
+    
+    node* slow =head; 
+    node* fast=head;
+    
+    while (slow !=NULL || fast !=NULL && fast->next !=NULL){
+
+        if (fast == NULL) {
+            return slow;
+        }
+        slow=slow->next;
+        fast =fast->next->next;
+        
+        return NULL;
+    }
+
+int findLength(node* head) {
+    
+    if ( head ==NULL ){
+        return 0;
+    }
+    
+    node* temp = head;
+    
+    int count =0;
+    
+    while(temp != NULL) {
+        count ++;
+        temp = temp->next;
+    }
+    
+    return count;
+}
+
+int main()
+{
+    std::cout<<"Hello World";
+    
+    //head =
+    int len =findLength(head );
+    cout<<"len="<<len;
+
+    return 0;
+    
+    
+}

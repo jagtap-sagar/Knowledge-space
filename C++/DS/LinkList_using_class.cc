@@ -21,14 +21,18 @@ public:
         next=NULL;
     }
     
-    void PrintNode(LinkedList*& head);
+   // void PrintNode(LinkedList*& head);
+void PrintNode();
     void AddNode(LinkedList*& head, int data);
     void AddAtBegin(LinkedList*& head,int data);
+
 };
 typedef LinkedList Node;
 
-void Node::PrintNode(Node*& head){
-    Node *temp =head;
+//void Node::PrintNode(Node*& head){
+void Node::PrintNode(){
+    
+    Node *temp =this;
     while(temp !=NULL){
         cout<<" "<<temp->data;
         temp=temp->next;
@@ -59,7 +63,8 @@ int main()
     head->AddNode(head,20);
     head->AddAtBegin(head,1);
     head->AddNode(head,2);
-    head->PrintNode(head);
+    //head->PrintNode(head);
+    head->PrintNode();// why head call again pass as argument. used "this" pointer.
 
     return 0;
 }

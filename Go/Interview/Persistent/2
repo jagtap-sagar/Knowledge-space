@@ -1,0 +1,61 @@
+1.	If you have system log, how you used rest API & same data required 100 users , how you 
+=>  
+2. Design single signin for HR, finance, admin
+
+
+3. Below code error Channel Handling:
+The loop for err := range errs will block indefinitely because errs is never closed if no errors occur, causing the program to hang.
+Fix: Close the errs channel after all goroutines complete:
+
+
+
+3. find any problem & how to fix it.
+package main
+
+import ("fmt")
+
+var taskCount = 10
+type Person struct {
+ Json string
+}
+var results = [100_000]Person
+ 
+type resultTask struct {
+ data string
+ index string
+}    
+
+func main() {
+    var wg sync.WaitGroup
+    var mutex sync.Mutex
+    resultmaps := make([]map[string]interface{}, len(results))
+    resultChan := make(chan resultTask, len(results))
+    errs := make(chan error, len(results))
+    for task := 0; task < taskCount; task++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            for result := range resultChan {
+                var resultmap map[string]interface{}
+                if err := json.Unmarshal(result.data, &resultmap); err != nil {
+                    errs <- err
+                    continue
+                }
+                mutex.Lock()
+                resultmaps[result.index] = resultmap
+                mutex.Unlock()
+            }
+        }()
+    }
+    for i, result := range results {
+        resultChan <- resultTask{index: i, data: result.Json}
+    }
+    close(resultChan)
+    
+    for err := range errs {
+        log.Println("Error processing JSON:", err)
+    }
+    close(errs)
+    wg.Wait()
+    
+}

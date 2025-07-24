@@ -1,0 +1,4 @@
+1. go routine 5 , communicate to channel
+2. used sync
+3. publisher subsciber
+4. even or odd go routine 

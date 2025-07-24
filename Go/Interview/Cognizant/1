@@ -3,4 +3,17 @@ Write publisher subscriber
 what are majar pit point in golang code
 how microservice communicate
 for postgresSQL what package you used
+How to detect any memory crash in production any tool.
 comman pitch fall in go
+=>1. Misusing defer
+Problem: Incorrect use of defer for resource cleanup, like closing files or connections in loops, causing resource exhaustion.
+for _, file := range files {
+    f, err := os.Open(file)
+    defer f.Close() // Defers until function ends, not loop iteration
+}
+2.Ignoring Error Handling
+Problem: Go requires explicit error handling, but developers sometimes ignore errors, assuming operations always succeed.
+file, _ := os.Open("file.txt") // Ignoring error
+Impact: Missed errors can lead to crashes or undefined behavior.
+Solution: Always check errors explicitly.
+3. 

@@ -4,6 +4,7 @@ what are majar pit point in golang code
 how microservice communicate
 for postgresSQL what package you used
 How to detect any memory crash in production any tool.
+=> pprof is Go’s built-in profiling tool  for memory diagnostics.
 struct in c++ & golang
 When to used unbuffered & buffered channel
 comman pitch fall in go

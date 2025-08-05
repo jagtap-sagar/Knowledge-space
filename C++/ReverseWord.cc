@@ -17,6 +17,8 @@ string reverseWords(string s) {
         if (c == ' ') {
             cout<<"\n Result"<<result<<" word="<<word;
             result = word + (result.empty() ? "" : " ") + result;
+             //above line result is not empty means it contaion some letter
+            //to sepatered between two word used space 
             word = "";
         } else {
             word += c;

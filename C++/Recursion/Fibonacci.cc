@@ -9,6 +9,9 @@ int fib(int n) {
 
 int main() {
     int n = 4;
-    cout << "Fib(4) = " << fib(n) << endl;
+    //cout << "Fib(4) = " << fib(n) << endl;
+    for (int i=0;i<n;i++){
+      cout<<" " << fib(i);
+    }
     return 0;
 }

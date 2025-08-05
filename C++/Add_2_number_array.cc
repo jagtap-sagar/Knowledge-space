@@ -42,7 +42,7 @@ void addTwoArr(int* A,int* B, int An, int Bn){
        result +=to_string(carry);
    }
    reverse(result.begin(),result.end());
-   cout<<"Result:"<<result;
+   cout<<"Result:"<<stoi(result);
    
 }
 

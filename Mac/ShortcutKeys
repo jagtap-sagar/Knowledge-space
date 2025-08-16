@@ -4,3 +4,12 @@ Option + # => to type #
 Command + R => after shut down immediately hold command + R buttopn To re-install existing mac same OS 
 Command + Option +R => install latestest OS.
 Command + Option + V => paste as cut ,  copy => Command + c.
+
+TextEdit, Notes, or Code Editors):
+Go to the Beginning of a Line:
+Press Command + Left Arrow (⌘ + ←)
+This moves the cursor to the start of the current line.
+
+Go to the End of a Line:
+Press Command + Right Arrow (⌘ + →)
+This moves the cursor to the end of the current line.

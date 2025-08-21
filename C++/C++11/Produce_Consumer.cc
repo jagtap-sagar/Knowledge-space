@@ -22,7 +22,7 @@ void producer(){
       cv.notify_one();
          //sleep
  } //for   
-    
+     //this is for finished flag set to true
      {
         lock_guard<mutex> lock(mt);
         finished =true;

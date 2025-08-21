@@ -1,54 +1,55 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
-#include<thread>
-#include<queue>
-#include<condition_variable>
+#include <thread>
+#include <queue>
+#include <condition_variable>
 using namespace std;
-//C++14 tread producer consumer problem
 
 mutex mt;
 condition_variable cv;
-queue<int> q;
 bool finished = false;
+queue<int> q;
 
-const int N=5;
 void producer(){
- for (int i=0;i<N;++i){
-     {
+    for(int i=0;i<5;i++){
+        {// for define scope for lock
+            lock_guard<mutex> lock(mt);
+            q.push(i+1);
+            cout<< "producer :"<<i+1;
+        }
+         cv.notify_one();
+         std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }//for
+    // for finished flag
+    {// for define scope for lock
         lock_guard<mutex> lock(mt);
-        q.push(i+1);
-        cout<<" produced :"<<i+1;
-     }
-      cv.notify_one();
-         //sleep
- } //for   
-     //this is for finished flag set to true
-     {
-        lock_guard<mutex> lock(mt);
-        finished =true;
-     }
-      cout<<"\n";
+        //cv.notify_one();
+        finished= true;
+    }
+    cout<<"\n";
     cv.notify_one();
 }
 
-void consumer(){
+void consumer() {
    
     while(true){
-      
-        unique_lock<mutex> lock(mt);
-        cv.wait(lock,[]{ return !q.empty() ||finished;  });
-        if(q.empty() && finished) {break;}
-        if(!q.empty()){
-            cout<<" Consumed :"<<q.front();
+        unique_lock<mutex> lock(mt);// this used manually release lock
+        cv.wait(lock,[]{return !q.empty() || finished ;});
+        if (q.empty() && finished ){break;}
+        if (!q.empty()){
+            cout<<" consumer :"<<q.front();
             q.pop();
-        }
+        } 
         lock.unlock();
-    }
+    }//while
+    
 }
-
 int main() {
+    // Write C++ code here
+    //std::cout << "Try programiz.pro";
     thread prod(producer);
     thread consu(consumer);
+    
     prod.join();
     consu.join();
     return 0;

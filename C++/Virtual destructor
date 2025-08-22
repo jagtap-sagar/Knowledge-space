@@ -2,7 +2,9 @@
 
 Base *bp = new Derive(); 
 
-When object allocated on heap, we need explicitly deallocated memory using delete. If don't declare virtual destructor  then it will call only Base class NOT derive , this is memory leak. So avoid such situation we need virtual destructor in Base class.  If you define virtual function other than destructor but doesn't solve problem , it is required ONLY virtual destructor.
+When object allocated on heap, we need explicitly deallocated memory using delete. If don't declare virtual destructor  then
+it will call only Base class NOT derive , this is memory leak. So avoid such situation we need virtual destructor in Base class.
+If you define virtual function other than destructor but doesn't solve problem , it is required ONLY virtual destructor.
 
 
 

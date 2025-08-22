@@ -1,0 +1,31 @@
+class Base {
+public:
+    ~Base() { /* ... */ }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() {
+        // This destructor won't be called if you use a Base*
+        // to delete a Derived object.
+    }
+};
+
+int main() {
+    Base* ptr = new Derived();
+    delete ptr; // Only Base::~Base() is called.
+    return 0;
+}
+
+  To avoid make base  class as virtual destructor
+  class Base {
+public:
+    virtual void show() { std::cout << "Base\n"; }
+    virtual ~Base() {} // Virtual destructor for proper cleanup
+};
+class Derived : public Base {
+public:
+    void show() override { std::cout << "Derived\n"; }
+};
+Base* b = new Derived();
+b->show(); // Prints "Derived"

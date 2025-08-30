@@ -83,3 +83,28 @@ int main() {
     d.B::value = 2;
     std::cout << d.A::value << " " << d.B::value << '\n'; // prints 1 2
 }
+
+//=========Solutions ===========
+
+struct Base {
+    int value = 42;
+    void greet() { std::cout << "Hello from Base\n"; }
+};
+
+struct A : virtual public Base {   // <-- virtual
+    void foo() { std::cout << "A\n"; }
+};
+
+struct B : virtual public Base {   // <-- virtual
+    void bar() { std::cout << "B\n"; }
+};
+
+struct Derived : public A, public B {
+    
+};
+
+int main() {
+    Derived d;
+    d.value = 10;      
+    d.greet();         // call base call as, no virtual in base & in Derive no defination.
+}

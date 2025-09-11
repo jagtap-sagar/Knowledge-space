@@ -1,6 +1,6 @@
 
 /*
-Find the pair with interwal k is given like 2.
+Find the unique pair with interwal k is given like 2.
 given array input {1,3,5,3,1};
 1+k = next number 3
 ex.

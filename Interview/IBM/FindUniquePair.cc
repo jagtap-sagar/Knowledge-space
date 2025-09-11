@@ -1,11 +1,13 @@
-/******************************************************************************
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
+/*
+Find the pair with interwal k is given like 2.
+given array input {1,3,5,3,1};
+1+k = next number 3
+ex.
+1+k = 1+2 =3 ,  
+3+k = 3+2 =5
+so pair is (1,3) & (3,5)
+  */
 #include <iostream>
 #include <algorithm>
 #include <map>

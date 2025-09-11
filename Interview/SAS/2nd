@@ -1,0 +1,19 @@
+1. what happen to below code
+void fun (){
+   A *a = new A()
+   return ;
+}
+=> used delete to free memory
+2. if there are thousand function 
+=> I used unique_ptr<A> 
+3. diff between macro & inline
+4.what is virual destructor? why it used
+5. how microservices communicated
+6. one microservice send start request but other microservice take long time to start, what will you used
+=> I used event driven for message , I put My request in message Q, other micro service done then it push into Q & send event.
+
+7. 0,0,1,1,0,1 => 1,1,1,0,0,0 write code
+8. I have 100 GB file, find frequency of each word
+=> used unordered_map 
+9. but we have 2 GB RAM, Map is in memory ,how you do it.
+=> like log rotation , save Map into file 

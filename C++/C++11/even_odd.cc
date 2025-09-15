@@ -1,3 +1,11 @@
+/*
+lock mutex
+wait until (i > N) OR (i has the parity I am responsible for)
+if (i > N) break
+print i and ++i
+unlock mutex
+wake the other thread
+*/
 #include<iostream>
 #include<thread>
 #include<condition_variable>

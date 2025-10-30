@@ -1,0 +1,65 @@
+//find pair from vector 
+/*
+Array: 1 2 4 4 5 7 8 9 
+Target: 9
+Pairs that sum to 9:
+(1, 8)
+(2, 7)
+(4, 5)
+
+--- Example 2 ---
+Array: 3 3 5 5 6 6 
+Target: 11
+Pairs that sum to 11:
+(5, 6)
+*/
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void findPair(vector<int>& v , int target, vector<pair<int,int>>& result){
+    cout<<"inside findPair";
+    int left = 0;
+    int right = v.size()-1;
+    while (left < right){
+        int currentSum = v[left]+v[right];
+        
+        if (currentSum == target ){
+            //result.push_back(pair<int,int>({v[left],v[right]}));
+            result.push_back({v[left],v[right]});
+            left++;
+            right--;
+            
+            //skip dubplicate value
+            while(left < right && v[left] == v[left-1]) {
+                left++;
+            }
+             while(left < right && v[right] == v[right+1]) {
+                right--;
+            }
+        }else if(currentSum < target)  {
+            left++;
+        }else {
+            right--;
+        }           
+    }
+}
+
+int main() {
+    // Write C++ code here
+    cout<<"inside main";
+
+    vector<int> v = {3, 3, 5, 5, 6, 6};//{1, 2, 4, 4, 5, 7, 8, 9};
+    int target =9;
+    vector<pair<int,int>> result;
+    findPair(v,target,result);
+    
+    //print pair
+    for (auto &p : result){
+        cout<<"\n{ "<<p.first<<","<<p.second<<" }";
+    }
+
+    return 0;
+}

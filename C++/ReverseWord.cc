@@ -1,8 +1,6 @@
 /******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+ input : My Name is Khan
+ output : Khan is Name My
 
 *******************************************************************************/
 
@@ -46,5 +44,31 @@ string reverseWords(string s) {
 int main() {
     string s = "I am good";
     cout <<"\nresult="<< reverseWords(s) << endl; // Output: good am I
+    return 0;
+}
+
+========================================================
+  
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    string str ="My Name is Khan";
+    string result ="";
+     string temp ="";
+    for (int i = str.length()-1; i>=0;--i){
+        if (str[i] !=' '){
+            temp = str[i] + temp;
+        }else {
+            cout<<"\n"<<temp;
+            result=result.empty()?temp:result+' '+temp;
+            temp ="";
+        }
+    }
+     result += ' '+temp;  // last word
+     cout<<"\n"<<result;
     return 0;
 }

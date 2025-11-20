@@ -15,7 +15,6 @@ int DecimalToBinary(int num) {
     }
     
     cout<<"=="<<binary<<"\n";
-    //return atoi(newNum);
     std::reverse(binary.begin(), binary.end());
     return stoi(binary);
 }

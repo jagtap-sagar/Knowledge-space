@@ -21,22 +21,17 @@ void addTwoArr(int* A,int* B, int An, int Bn){
    
    //vector<int> result;
    string  result=" ";
-   char temp[2];
-   int n=(An>Bn)?An:Bn;
+  
    int i=An-1,j = Bn-1;
    
-   //for (int i=n-1;i>=0;i--){
    while(i>=0||j>=0||carry){
-       temp[0]=' ';
-       temp[1]=' ';
        sum=carry;
        if(i>=0) sum +=A[i--];
        if(j>=0) sum +=B[j--];
        carry =sum/10;
        sum=sum%10;
-       //sprintf(temp,"%d",sum);;
        
-       result +=to_string(sum);//temp[0];
+       result +=to_string(sum);
    }
    if (carry){
        result +=to_string(carry);

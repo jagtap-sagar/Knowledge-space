@@ -58,17 +58,17 @@ int main() {
     // Write C++ code here
     string str ="My Name is Khan";
     string result ="";
-     string temp ="";
+     string word ="";
     for (int i = str.length()-1; i>=0;--i){
         if (str[i] !=' '){
-            temp = str[i] + temp;
+            word = str[i] + word;
         }else {
-            cout<<"\n"<<temp;
-            result=result.empty()?temp:result+' '+temp;
-            temp ="";
+            cout<<"\n"<<word;
+            result=result.empty()?word:result+' '+word;
+            word ="";
         }
     }
-     result += ' '+temp;  // last word
+     result += ' '+word;  // last word
      cout<<"\n"<<result;
     return 0;
 }

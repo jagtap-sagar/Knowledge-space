@@ -65,6 +65,7 @@ void even_thread()
         /* ---------- critical section ---------- */
         std::cout << "even:" << i << ' ';
         turn = true;                              // hand over to odd
+        lock.unlock();
         /* ---------------------------------------- */
         cv.notify_one();                          // **B**
     }                                             // mutex released here
@@ -78,6 +79,7 @@ void odd_thread()
         cv.wait(lock, []{ return turn; });        // sleep while turn==false
         std::cout << "odd:" << i << ' ';
         turn = false;                             // hand over to even
+        lock.unlock();
         cv.notify_one();
     }
 }

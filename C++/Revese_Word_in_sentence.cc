@@ -47,20 +47,7 @@ using namespace std;
 /// i/p => "My name is Sagar"
 ///o/p => "yM eman si ragaS"
 void reverseString(string& str){
-    /*int len = str.length();
-    string result="", temp="";
-    for(int i =len-1 ; i >=0; --i){
-        
-        if ( str[i] != ' '){
-            temp+=str[i];
-        }else {
-            result = temp +' '+result;
-            temp.clear();
-        }
-    }
-    result = temp +' '+result;
-    cout<<"\nResult :"<<result;
-    */
+   
     stringstream ss(str);
     string temp;
     vector<string> v;
@@ -99,19 +86,17 @@ int main()
 using namespace std;
 
 int main() {
-    // Write C++ code here
-    string str ="My Name is Khan";
-    string result ="";
-     string temp ="";
-    for (int i = str.length()-1; i>=0;--i){
-        if (str[i] !=' '){
-            temp += str[i];
+    string s="My name is Khan";
+    string word="", result="";
+    for(int i = s.length()-1; i>=0; i--){
+        if (s[i] == ' ') {
+            result = word+(result.empty()?"":" ")+result;
+            word.clear();
         }else {
-            result = result.empty()?temp: result+ ' '+temp;
-            temp.clear();
-       }
+            word +=s[i];
+        }
     }
-    result += ' '+temp; 
+    result = word +" "+result;
     cout<<"\n"<<result;
     return 0;
 }

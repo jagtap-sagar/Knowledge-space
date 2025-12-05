@@ -8,8 +8,8 @@ void ShiftToRight(int *arr,int& len){
      if(arr[i] !=0){
          arr[zeros++]=arr[i];
      }
-  }//
-  for(;zeros<len;){
+  }//for
+  while(zeros<len){
       arr[zeros++]=0;
   }
 }
@@ -19,8 +19,6 @@ void ShiftToLeft(int *arr,int& len){
  
   for (int i=len-1;i>=0;i--){
       if(arr[i] !=0){
-          //std::cout <<" "<<arr[i];
-         //  std::cout <<"\nzeros: "<<arr[zeros]<<":"<<zeros;;
          arr[zeros]=arr[i];
          zeros--;
      } 

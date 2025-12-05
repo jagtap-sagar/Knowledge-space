@@ -6,7 +6,7 @@ Pairs that sum to 9:
 (1, 8)
 (2, 7)
 (4, 5)
-
+Idea : start array from left & right , compare array[left] + array[right] == Target 
 --- Example 2 ---
 Array: 3 3 5 5 6 6 
 Target: 11

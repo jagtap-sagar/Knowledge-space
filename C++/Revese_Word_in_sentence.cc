@@ -11,18 +11,18 @@ int main()
     cout<<"Hello World";
     string str = "My name is Sagar";
     cout<<"\n str="<<str;
-    string temp = "";
+    string word = "";
     int index =0;
     for (int i= str.length()-1; i>=0; --i) {
         
         if (str[i] !=' ') {
-            //temp[index++] = str[i];
-            temp += str[i];
-            //cout << "\ntemp[index]"<<temp[index-1];
+            //word[index++] = str[i];
+            word += str[i];
+            //cout << "\nword[index]"<<word[index-1];
         }
         else {
-           // temp[index] ='\0';
-            cout<< "temp="<<temp;
+           // word[index] ='\0';
+            cout<< "word="<<temp;
             str.replace(i+1, temp.length(), temp);
             index=0;
             temp.clear();

@@ -1,0 +1,88 @@
+
+#include <iostream>
+#include <string>
+#include <map>
+using namespace std;
+
+class Base {
+    int p;
+    public:
+    Base(){ 
+        p =0;
+    }
+    virtual void foo() {
+        cout<< " Base ";
+    }
+    virtual void  Show(int a) =0;
+};
+
+class Derive :public Base {
+    private: 
+    void Dispaly() {
+        cout<< " Derive Dispaly ";
+    }
+    virtual void  Show ( int a ) {
+        cout<< " a:" << a;
+    }
+    void Show ( string str) {
+        cout<< " str:" << str;
+    }
+};
+int main() {
+Base *ptr = new Derive();
+ptr->Show();// w
+}
+1. what memory allocated of ptr & p(member variable)
+ptr on stack, p is on heapl
+
+2. In derive class I define private still it called Show function , why?
+=> as Show is virtual in Base, So virulal machanism not depend on access specifier .It depend on virtual table. So it get called.
+
+/*
+"abhdgfywabfa"
+ 
+a::F::0::L::11
+
+b::F::1::L::9
+
+h::F::2::L::2
+
+d::F::3::L::3
+
+g::F::4::L::4
+
+f::F::5::L::10
+
+y::F::6::L::6
+
+w::F::7::L::7
+ 
+
+ map<char, int> 
+ */
+ void PrintAlpa(string s) {
+     map<char,int> m;
+     
+     for (int i=0;i < s.length();i++ ) {
+         //m[i] = s[i];
+         auto f = m.find(s[i]);
+         if (f != m.end()) { //found 
+             //cout<< f->first<<"::"<<f->second;
+             m[s[i]] = i;
+         } else {
+            m.insert(pair<char,int>(s[i],i));
+         }
+        
+     }
+     // show string
+     int index =0;
+     for ( auto p : m) {  
+         cout<<"\n"<<p.first <<"::F::"<<index++<<"::L::"<<p.second;
+     }
+ }
+int main()
+{
+    string str = "abhdgfywabfa";
+    PrintAlpa(str);
+    return 0;
+}

@@ -1,3 +1,7 @@
+/*
+take temp array of length A+B,  
+*/
+
 #include <iostream>
 
 using namespace std;

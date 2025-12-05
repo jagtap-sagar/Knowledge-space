@@ -53,7 +53,6 @@ O/p -> String output= "This Is A Beautiful World"
 */
 
 
-
 #include<iostream>
 #include<string>
 using namespace std;
@@ -63,31 +62,21 @@ int main() {
 string str ="    this    is  a    beautiful    world";
 string temp;
 int isspace =0;
-int i=0;
-    for(int i=0; i< str.length(); ++i) {
-            if (str[i] == ' ' )
-            {
-                if (isspace ==1) // adding space between two word 
-                {
-                    temp += " ";
-                }
-                isspace =0; 
-                continue;
-            }
-            else //no Space 
-            {
-                if (isspace ==0 ) // after space found character,then first letter should be capital.
-                 {
-                     temp += toupper(str[i]);
-                     isspace=1;
-                 }
-                 else 
-                    temp += str[i];
-            }
-            
-                
-    }    
 
-cout<<"temp="<< temp;
+    for(int i=0; i< str.length(); ++i) {
+        if (str[i] == ' '){
+            if (isspace ==1) {
+                temp += ' ';
+            }
+        isspace =0;    
+        continue;
+        }else if (isspace ==0){
+            temp +=toupper(str[i]);
+            isspace =1;
+        }else {
+            temp +=str[i];
+        }
+    }
+    cout<< temp;
 return 0;
 }

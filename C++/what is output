@@ -55,3 +55,10 @@ int main()
 	rx.go(); 
 	return 0; 
 } 
+
+
+/*
+X::f Y::g 
+
+X doen't have virtual foo 
+*/

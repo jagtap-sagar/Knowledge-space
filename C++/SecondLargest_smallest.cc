@@ -35,7 +35,7 @@ int seondSmallest(int *a, int n) {
             second = first;
             first= a[i];
         }
-        else if (second != first &&  a[i] < second ) {
+        else if (second != first &&  a[i] < second ) { here first alredy greater,So need to check second
             second=a[i];
         }
         

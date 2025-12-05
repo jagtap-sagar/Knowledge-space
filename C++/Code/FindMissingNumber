@@ -1,5 +1,14 @@
+#include<iostream>
+using namespace std;
+
+/*
+i/p 3,4,5,6,8,9,10,12;
+o/p missing number 11
+*/
 
 // compare next number minus previous number greater than differnce.
+
+
 void findMissing(int *arr, int n) {
     int diff = arr[1]-arr[0];
     for (int i=1; i<n;++i){

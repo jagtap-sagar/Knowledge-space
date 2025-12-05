@@ -1,11 +1,13 @@
 //Reverse an array upto a given position
-Input:
+/*Input:
 arr[] = {1, 2, 3, 4, 5, 6}
     k = 4
 
 Output:
 arr[] = {4, 3, 2, 1, 5, 6} 
 
+iterate till pos, swap ith with pos , decreament pos.
+*/
 #include <iostream>
 
 using namespace std;
@@ -21,6 +23,8 @@ int reverseDigits(int num)
 } 
   
   void reverseArray(int arr[],int arraysize,int pos){
+        pos-=1; // array start from zero , so post decreament by 1.
+
       for (int i=0; i< pos;++i){
           //swap number
           int temp =arr[i];

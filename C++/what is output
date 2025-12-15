@@ -1,11 +1,4 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
+Q1.
 #include <iostream>
 class A {
   static int i;
@@ -57,8 +50,38 @@ int main()
 } 
 
 
-/*
+/* OutPut
 X::f Y::g 
 
 X doen't have virtual foo 
+*/
+
+Q2.
+#include <iostream>
+
+class Base {
+  public:
+  virtual  ~Base() =0;
+};
+
+inline Base::~Base() {
+    std::cout<<"\n in Base";
+}
+
+class Derive:public Base {
+  public:
+   ~Derive(){
+      std::cout<<"\n in Derive\n";
+  }
+};
+
+int main()
+{
+    Base *ptr = new Derive();
+    return 0;
+}
+
+/* OutPut
+No Print, output is nothing.
+why ? => object allocated on heap, to clean up heap memory you requied delete ptr, which called destrutor.
 */

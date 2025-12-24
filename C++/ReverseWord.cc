@@ -64,7 +64,7 @@ int main() {
             word = str[i] + word;
         }else {
             cout<<"\n"<<word;
-            result=result.empty()?word:result+' '+word;
+            result=result.empty()? word : result+' '+word;
             word ="";
         }
     }

@@ -1,0 +1,64 @@
+1. what fix protocol
+2. write smart pointer of unique pointer using c++98.
+3. what diff between Map, set, unordered_set, when which one used
+4. Write Singlleton class, write thread safe
+5. write db query find 3rd larest of salary from table.
+
+
+Templete< class T> 
+Class  SMPt { 
+ Public:
+      T * ptr;
+     SMpt (){
+      Ptr = new T();
+~Smpt() {
+ Delete [] ptr;
+}
+};
+
+
+Map<int, string> map; 
+Set<int> s ;
+
+unoredered_map<int> m;
+
+==============================
+
+Class Singleton { 
+  Static Singleton* m_ptr;
+private: 
+ Singleton(const Singleton& ref) = delete;
+Singleton operator = ((const Singleton& ref) = delete;
+Singleton () =default; 
+
+Public : 
+Static Singleton* getInstance() {
+lock_guard<mutex> lock;
+  If (m_ptr == NULL ) {
+    m_ptr = new Singleton() ;
+ }
+Lock.unlock(); 
+
+/*Static Singleton* obj;
+Return obj;*/
+ Return m_ptr;
+ 
+}
+  Void foo() {} 
+};
+
+Singleton* Singleton::m_ptr =NULL; 
+
+Int main () {
+    Singleton* ptr = Singleton::getInstance() ;
+    Ptr -> foo();
+}
+
+
+emp  3 highest 
+1 Sagar  1k 
+2 Vikram 2 k
+3 Vijay  4k 
+In between  max 
+
+

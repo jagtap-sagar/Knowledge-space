@@ -32,6 +32,7 @@ Below code is thread safe.
 
 Singleton* Singleton:: m_ptr =NULL;
 //int* Singleton::var=Null;
+//int A::i = 10;
 
 int main() {
  Singleton* ptr = Singleton:: getInstance();

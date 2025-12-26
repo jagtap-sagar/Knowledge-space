@@ -36,7 +36,9 @@ Singleton* Singleton:: m_ptr =NULL;
 //int A::i = 10;
 
 int main() {
- Singleton* ptr = Singleton:: getInstance();
- ptr->Show();
+// Singleton* ptr = Singleton:: getInstance();
+// ptr->Show();
+ Singleton::getInstance().Show();
+
 
 }

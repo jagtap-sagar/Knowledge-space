@@ -17,7 +17,7 @@ class Singleton {
 Below code is thread safe.
 For local static, Since C++11 the compiler automatically injects a guard variable and mutex-like logic around the function-local static.
 */
-       static Singleton getInstance() {
+       static Singleton& getInstance() {
          static Singleton obj;
 		 return obj ;
        }

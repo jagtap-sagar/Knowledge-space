@@ -1,6 +1,6 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
-
+/* 9 1 2 3 4 5 0 0 0 */
 void ShiftToRight(int *arr,int& len){
   int index =0;
   int zeros=0;
@@ -13,7 +13,7 @@ void ShiftToRight(int *arr,int& len){
       arr[zeros++]=0;
   }
 }
-
+ /* 0 0 0 9 1 2 3 4 5*/
 void ShiftToLeft(int *arr,int& len){
   int zeros=len-1;//*** array length is +1 , so start -1 
  

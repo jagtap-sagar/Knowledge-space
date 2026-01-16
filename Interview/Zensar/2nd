@@ -1,0 +1,94 @@
+Interface 
+
+Shop 
+Draw 
+
+Circle ,Squre 
+
+// base class 
+class Shap {
+Public:
+virtual Void Draw() =0 ;
+virtual ~Shap() =0;
+};
+Shap::Shap () {}
+
+Class Circle : public Shap{
+Public :
+Void Draw() {
+ Cout<< “ Inside circle” ;
+~Circle() 
+}
+};
+
+
+
+Class Square  : public Shap{
+Public :
+Void Draw() {
+ Cout<< “ Inside Square” ;
+}
+};
+
+
+Void foo(Shape *Base_obj) {
+
+Base_obj->Draw();
+}
+
+Int main () {
+
+Shape *cobj = new Circle() ;
+Shape *sobj = new Squre() ;
+
+//Unique 
+vector<Shape> v;
+V.push_back(cobj);
+V.push_back(sobj);
+for( auto I: v) {
+
+i.foo(coba); 
+
+}
+
+Delete cobj;
+Delete sobj;
+
+
+
+====================
+
+Only stack 
+ 
+
+Private 
+
+
+Std::array & regal
+
+Hello , 
+
+
+int HighestFreq(string& str) {
+     Char array[26] ={0}; // Hello 
+    For ( auto i : str) {
+     array[I] ++;
+}  
+
+Int fraq = 0; 
+For ( int I=0 ; I< 26 ; I++ ) {
+   If ( fraq < array[I] }
+ {
+   Freq = arra[i];
+}
+
+}
+
+Return fraq; 
+
+
+Pull, fetch 
+
+
+
+

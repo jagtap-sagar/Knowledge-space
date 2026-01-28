@@ -18,10 +18,8 @@ using namespace std;
 
 void addTwoArr(int* A,int* B, int An, int Bn){
    int sum=0, carry=0;
-   
    //vector<int> result;
    string  result=" ";
-  
    int i=An-1,j = Bn-1;
    
    while(i>=0||j>=0||carry){

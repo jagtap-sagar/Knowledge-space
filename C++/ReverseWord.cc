@@ -65,6 +65,7 @@ int main() {
         }else {
             cout<<"\n"<<word;
             //result=result.empty()? word : result+' '+word;
+         // result += (result=="" ? "":" ")+word ; // more understand 
           result += result.empty()? word : ' '+word;
             word ="";
         }

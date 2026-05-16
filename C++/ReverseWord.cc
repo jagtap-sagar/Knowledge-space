@@ -7,46 +7,51 @@
 #include <iostream>
 #include <string>
 using namespace std;
-string reverseWords(string s) {
-    string result="", word="";
+
+void ReverseWord(string& sentence){
+    string word = "",result =" ";
+    int size = sentence.length();
+  
+    //for (int i = size -1;  i>=0; i--){ // This for loop for " yM emaN si nahK" , each word reverse in sentences, rest of the thing is same. 
+    for (int i = 0;  i<(size); i++){
+        char ch=sentence[i];
+        //cout<<" ch :"<<ch<<" "<<"len"<<len;
+        //cout<<"\nsentence :"<<sentence[len];
+        if (ch != ' '){
+            word = ch+word;
+         
+            //cout<<" Word :"<<word;
+        }else{
+            //used ternary operator; ' '+word;
+            result +=(result=="")?word : ' '+word ; 
+           //result +=(result==""?word:' '+word);
+           /*if (result==""){
+               result=word;
+           }else {
+               result+=' '+word;
+           }*/
     
-    //below more optimized 
-    for (char c : s) {
-        if (c == ' ') {
-            cout<<"\n Result"<<result<<" word="<<word;
-            result = word + (result.empty() ? "" : " ") + result;
-             //above line result is not empty means it contaion some letter
-            //to sepatered between two word used space 
-            word = "";
-        } else {
-            word += c;
-        }
-    }
-    result = word + (result.empty() ? "" : " ") + result;
-    
-   /*  //Below is also correct 
-   for(int i=0;i<s.length();++i){
-        if (s[i] ==' '){
-            cout<<"word="<<word;
-        result = word+(result.empty()?"":" ")+result;
-        //word="";
-        word.clear();
-        }else {
-            cout<<"2word="<<word;
-            word +=s[i];
+            word ="";
         }
         
-    }*/
-     result = word+(result.empty()?"":" ")+result;
-     cout<<"\n";
-     return result;
-}
-int main() {
-    string s = "I am good";
-    cout <<"\nresult="<< reverseWords(s) << endl; // Output: good am I
-    return 0;
+    }
+    result +=' ' +word ;
+    cout<<"\n result="<<result<<"\n";
+    sentence ="";
+    sentence=result;
 }
 
+int main()
+{
+    string name = "My Name is Khan";
+    cout<< " Without :"<<name<<"\n";
+    //reverser -> Khan is Name My
+    ReverseWord(name);
+    cout<< " ReverseWord :"<<name<<"\n";
+    std::cout<<"Hello World";
+    
+    return 0;
+}
 ========================================================
   
 #include <iostream>

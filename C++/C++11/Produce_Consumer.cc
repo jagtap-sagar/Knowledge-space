@@ -54,3 +54,55 @@ int main() {
     consu.join();
     return 0;
 }
+
+====================================================================
+
+#include <iostream>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
+
+using namespace std;
+
+mutex m;
+condition_variable cv;
+queue<int> q;
+bool finished = true;
+
+void producer() {
+    for (int i = 1; i <= 5; ++i) {
+        unique_lock<mutex> lock(m);
+        cv.wait(lock, [] { return finished; });
+
+        q.push(i);
+        cout << "producer :" << i << " ";
+
+        finished = false;   // now consumer's turn
+        cv.notify_one();
+    }
+}
+
+void consumer() {
+    for (int i = 1; i <= 5; ++i) {
+        unique_lock<mutex> lock(m);
+        cv.wait(lock, [] { return !finished; });
+
+        int value = q.front();
+        q.pop();
+        cout << "consumer :" << value << " ";
+
+        finished = true;    // now producer's turn
+        cv.notify_one();
+    }
+}
+
+int main() {
+    thread prod(producer);
+    thread cons(consumer);
+
+    prod.join();
+    cons.join();
+
+    return 0;
+}

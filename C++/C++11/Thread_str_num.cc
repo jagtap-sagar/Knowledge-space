@@ -1,4 +1,6 @@
 // Online C++ compiler to run C++ program online
+// Two thread num thread, string thread , combine each character & number from two thread form result.
+ex .  Result=a1b2c3d4
 #include <iostream>
 
 #include <string>

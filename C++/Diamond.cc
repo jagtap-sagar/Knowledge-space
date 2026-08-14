@@ -1,4 +1,6 @@
 /*
+when two base classes share a common ancestor, causing ambiguity in the derived class.
+
 Base is inherited ** non-virtually** by both A and B.
 Derived inherits from both A and B.
 Consequence: the object layout of Derived contains two independent Base sub-objects, one via A and one via B.

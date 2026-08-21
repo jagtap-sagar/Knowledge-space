@@ -86,3 +86,70 @@ Node head->next->next = new Node(3);
 The keyword Node starts a declaration, so the compiler expects an identifier (or a declarator such as *p, &r, a[10] …) to follow.
 Instead it sees the expression head->next->next, which is not an identifier, and it gives up.
 */
+
+====================== whole code as well==============================
+  
+#include <iostream>
+
+struct LinkedList {
+    int data;
+    struct LinkedList* next;
+};
+
+typedef struct LinkedList node;
+
+void createlist(node*& head,int val) {
+    if (head == nullptr) {
+        head = new node();
+        head->data = val;
+        head->next = nullptr;
+    }else {
+        node* temp = head ;
+        while(temp != nullptr){
+            temp = temp->next;
+        }
+        temp->next = new node();
+        temp->next->data = val;
+        temp->next->next =nullptr;
+    }//else 
+    
+}
+void print(node*& head) {
+    node *temp = head;
+    while(temp != nullptr){
+            std::cout<<" "<<temp->data;
+            temp = temp->next;
+    }
+    
+}
+
+void reverselist(node*& head){
+    if (head != nullptr) {
+        node* curr=head;
+        node* next=nullptr, *prev=nullptr;
+        while(curr != nullptr) {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr =next;
+        }
+        head = prev;
+    }
+}
+
+int main()
+{
+    
+    node *head = nullptr;
+    createlist(head,1);
+    createlist(head->next,2);
+    createlist(head->next->next,3);
+    createlist(head->next->next->next,4);
+    std::cout<<"Hello World\n";
+    print(head);
+
+    reverselist(head);
+    std::cout<<"\n";
+    print(head);
+    return 0;
+}

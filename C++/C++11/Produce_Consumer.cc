@@ -1,3 +1,59 @@
+/******************************************************************************
+
+*******************************************************************************/
+
+#include <iostream>
+
+#include <iostream>
+#include <thread>
+#include <condition_variable>
+
+#include <queue>
+using namespace std;
+
+mutex mt;
+condition_variable cv;
+int MAX = 5;
+queue<int> q;
+
+void producer() {
+    for(int i =0;i<10; i++)    {
+        unique_lock<mutex> lock(mt);
+        cv.wait(lock,[]{return q.size() < MAX;});
+        
+        q.push(i);
+        cout<<" prod:"<<i;
+        lock.unlock();
+        cv.notify_one();
+    }
+}
+
+void cosumer() {
+    for(int i =0;i<10; i++)    {
+        unique_lock<mutex> lock(mt);
+        cv.wait(lock,[]{return !q.empty();});
+        cout<<" cos:"<<q.front();
+
+        q.pop();;
+        
+        lock.unlock();
+        cv.notify_one();
+    }
+}
+
+
+int main() {
+    thread p(producer);
+    
+    thread c(cosumer);
+    
+    p.join();
+    c.join();
+}
+
+
+
+==============================================================================
 // Online C++ compiler to run C++ program online
 #include <iostream>
 #include <thread>

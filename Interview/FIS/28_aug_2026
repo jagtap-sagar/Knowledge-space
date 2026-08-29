@@ -1,0 +1,26 @@
+1. wheathwe compile or not below code
+
+#include <iostream>
+class base {
+  public:  
+  void f () {
+     std:: cout<<"base ";
+  }
+};
+
+class derive :public base {
+  public:  
+  void f () {
+      std:: cout<<"derive base ";
+  }
+};
+
+int main()
+{
+    base *ptr =new derive();
+    ptr->f();
+    std::cout<<"Hello World";
+    return 0;
+}
+2. how debug crashh dump 
+3. when you give debug binary it work at client but without debug binary not work , it crashed.

@@ -23,4 +23,54 @@ int main()
     return 0;
 }
 2. how debug crashh dump 
-3. when you give debug binary it work at client but without debug binary not work , it crashed.
+3. when you give debug binary it work at client but without debug binary(Release binary) not work , it crashed.
+4. 
+5 .What is output below code.
+
+#include <iostream>
+class A {
+  public: 
+  A() {
+      f(); 
+  }
+  void f () {
+     std:: cout<<"\n A";
+  }
+};
+
+class B: public A {
+  public: 
+  B() {
+      f(); 
+  }
+  void f () {
+     std:: cout<<"\n B";
+  }
+};
+
+
+class C: public B {
+  public: 
+  C() {
+      f(); 
+  }
+  void f () {
+     std:: cout<<"\n C";
+  }
+};
+
+class D: public C {
+  public: 
+  D() {
+      f(); 
+  }
+  void f () {
+     std:: cout<<"\n D";
+  }
+};
+
+int main()
+{
+  D d;
+    return 0;
+}

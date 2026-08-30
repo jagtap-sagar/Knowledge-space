@@ -80,4 +80,5 @@ int main()
   3. void F(int a, char b);      
   4. void F(int a, int b);
 => only 1.3 pair rest is not.
-7. write C++ code for ([{}]) valid  ([{]}) in invalid, 
+7.What is friend function why it used?
+8. write C++ code for ([{}]) valid  ([{]}) in invalid, 

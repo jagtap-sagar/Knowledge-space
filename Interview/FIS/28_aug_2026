@@ -85,6 +85,7 @@ int main()
 =>
 /******************************************************************************
 write C++ code for ([{}]) valid  ([{]}) in invalid, 
+
 *******************************************************************************/
 
 #include <iostream>
@@ -94,27 +95,34 @@ using namespace std;
 int main() {
    stack <char> st;
    char poped_data;
-   bool invalid = true;
-   string given_str = "([{}])"; //"([{]})"; //"([{}])";
+   bool isvalid = true;
+   string given_str ="([)]";//"([{}])"; //"([{}])";
    
    for (auto ch : given_str) {
        if ( (ch =='(') || ( ch =='[' ) || ( ch =='{')  ){
            st.push(ch);
            //continue;
-       } else if ( !st.empty() && (ch ==')') || ( ch ==']')  || ( ch =='}')  ){
+       } else if ( !st.empty() ){
             poped_data = st.top();
             st.pop();
-            if ( (ch ==')' && poped_data =='(')  || (ch ==']' && poped_data =='[') || (ch =='}' && poped_data =='{') )
-                invalid = true;
+            cout<<" poped_data"<<poped_data<<" ch:"<<ch;
+            if ( (ch ==')' && poped_data =='(')  || 
+                 (ch ==']' && poped_data =='[')  ||
+                 (ch =='}' && poped_data =='{') )
+                isvalid = true;
+            else {
+                isvalid = false; 
+                break;
+            }
        }else {
-             invalid = false; 
+            cout<<" else false";
+             isvalid = false; 
              break;
         }
-    }//for       
-  
-   if ( ( ! st.empty() ) || (! invalid) ) 
+    }//for 
+            
+   if ( ( ! st.empty() ) || (! isvalid) ) 
         std::cout << " after invalid" << std::endl;
     else 
         std::cout << "valid" << std::endl;        
-   
 }

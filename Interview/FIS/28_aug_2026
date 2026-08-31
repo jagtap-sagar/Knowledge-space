@@ -25,6 +25,7 @@ int main()
 2. how debug crashh dump 
 3. when you give debug binary it work at client but without debug binary(Release binary) not work , it crashed.
 4. What is initliation list , why it is used?
+=> used for refernce , const variables.
 5 .What is output below code.
 
 #include <iostream>

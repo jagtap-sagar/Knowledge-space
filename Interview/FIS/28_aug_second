@@ -63,8 +63,47 @@ int main() {
      fun(n-1);
     cout<<" n2:"<<n;
 }
-8. Multiple inheritance  call ing Construct  1, destructor    
+8. Multiple inheritance what oreder calling Constructor  1, destructor  
+=>> oreder of inheritance
 
+#include <iostream>
+using namespace std;
+
+
+class base {
+  public : 
+  base () {
+      cout<<" Base ";
+  }
+   ~base () {
+      cout<<" DBase ";
+  }
+};
+
+class derive1  {
+  public : 
+  derive1 () {
+      cout<<" derive1 ";
+  }
+  ~derive1 () {
+      cout<<" Dderive1 ";
+  }
+};
+class derive2 : public derive1 ,base  {
+  public : 
+  derive2 () {
+      cout<<" derive2 ";
+  }
+  ~derive2 () {
+      cout<<" Dderive2 ";
+  }
+};;
+int main() {
+    derive2 d;
+  //cout<<"\n fun: "<<fun ( n)<<"\n" ;  
+}
+Output => derive1  Base  derive2 
+  Dderive2  DBase  Dderive1 
 
 Airline Reservation Waitlist
  

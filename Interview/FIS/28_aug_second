@@ -1,0 +1,91 @@
+1. What is application of this pointer ?
+2. Convert class obj into int     =>  wrong 
+3. Can friend call with this pointer 
+4. How wrote /read object into file  => wrong
+5. Thread 4 push_back  => correct, here you used lock_guard / unique_lock with mutex
+  #include <iostream>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
+//#include <automatic>
+#include <atomic>
+
+using namespace std;
+
+condition_variable cv;
+bool finished = false;
+//atomic<int> counter =0;
+int counter =0;
+
+void increment() {
+   
+    //for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 10; i++) {
+         //unique_lock<mutex> lock(mt);
+        //lock_guard<mutex> lock(mt);
+        counter++;  // race condition here
+        cout<<" "<< counter;
+    //lock.unlock();
+    }
+    cout<<"\n";
+}
+
+int main() {
+    std::vector<std::thread> threads;
+    for (int i = 0; i < 4; i++){
+        //cout<<"================"<<i+1<<"\n";   
+        threads.push_back(std::thread(increment));
+    }
+    for (auto& t : threads)
+        t.join();
+    ///std::cout << counter << std::endl;  // should be 400000, but won't be
+}
+
+6. vector  ite1 < itr2 , what is output below code ?
+  int main() {
+    int n=3;
+    vector<int> v = {1,2,3,4};
+    std::vector<int>::iterator it1 = v.begin(); 
+    std::vector<int>::iterator it2 = v.end(); 
+
+    std::vector<int>::iterator it3 =it1; 
+    std::vector<int>::iterator it4= it2; 
+    while (it3 < it4 ){
+        cout<<" "<<*it3;
+        it3++;
+    }
+7. Recurssive fun ( n-1 ) , what is out put below   => correct
+  int fun (int n ){
+    if (n==0) return 0;
+    
+    cout<<" n:"<<n<<"\n";
+     fun(n-1);
+    cout<<" n2:"<<n;
+}
+8. Multiple inheritance  call ing Construct  1, destructor    
+
+
+Airline Reservation Waitlist
+ 
+Business Scenario
+-----------------
+A flight has a fixed number of seats.
+When no seats are available, passengers are added to a waiting list.
+If a confirmed booking is cancelled:
+First passenger in waitlist gets the seat
+ 
+Requirements
+---------------
+Implement:
+ 
+bookPassenger()
+cancelSeat()
+ 
+Expected Behavior
+-------------------
+Seat confirmed for A
+Seat confirmed for B
+C added to waitlist
+Cancellation occurs
+Seat allocated to C 

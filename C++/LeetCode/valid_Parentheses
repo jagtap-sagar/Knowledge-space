@@ -1,0 +1,21 @@
+ bool isValid(string s) {
+        //cout<<"len :"<<s.length();
+        if ( s.empty() )  return true;
+        if ( s.length() == 1 ) return false;
+
+        stack<char> st;
+        for (auto ch : s) {
+            if ( (ch=='(') || (ch=='[') || (ch=='{')   ) 
+                st.push(ch);
+            else  if ( !st.empty()) {
+                char poped = st.top();
+                st.pop();
+                if ( ch == ')' && poped != '('  ) return false;
+                if ( ch == ']' && poped != '['  ) return false;
+                if ( ch == '}' && poped != '{'  ) return false;
+            } else 
+                return false;
+        }//for 
+        if ( !st.empty()) return false;
+        return true;
+    }

@@ -32,6 +32,20 @@ int HightFreq(string& str){
     cout<<"\n"<<fraq;//std::max(arr);
     return fraq;   
 }
+//--------- more optimized code ------------------
+int FindFreq(const string& str ){
+    if (str.empty()) return 0;
+        
+    char freq[26]={0};
+    int maxcount =0;
+    for (auto& ch : str){
+        freq[ch-'a']++;
+        if (maxcount < freq[ch-'a'])
+            maxcount = freq[ch-'a'];
+    } 
+   // cout<<"\nmaxcount: "<<maxcount;
+    return maxcount;
+}
 
 int main()
 {

@@ -9,7 +9,10 @@ o/p = {4,5,1,2,3}
 */ 
 #include <iostream>
 using namespace std;
-
+/*
+start loop from position, take first ele to temp = arr[0], then move all ele to left(for j=0 j<size-1), 
+then last shift to last arr[size-1] = temp.
+    */
 void LeftRotate(int* arr, int& size, int& pos) {
     // loop for position
     for (int i=0;i<pos;++i){

@@ -1,6 +1,9 @@
 /******************************************************************************
- input : My Name is Khan
+ 1. input : My Name is Khan
  output : Khan is Name My
+ 
+ 2. input : My Name is Khan
+ output :yM emaN si nahK
 
 *******************************************************************************/
 
@@ -8,7 +11,7 @@
 #include <string>
 using namespace std;
 
-//Below code for "Khan is Name My" 
+//1. Below code for "Khan is Name My" 
 void ReverseWord(string& sentence){ 
     string word = "",result =" ";
     int size = sentence.length();
@@ -26,7 +29,7 @@ void ReverseWord(string& sentence){
     sentence=result;
 }
 
-//Each word reverse yM emaN si nahK .
+//2. Each word reverse yM emaN si nahK .
 //only  for start from last character, rest of code is same.
 void ReverseWord(string& str) {
     string result ="", word =""; 

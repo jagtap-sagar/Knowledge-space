@@ -8,37 +8,39 @@
 #include <string>
 using namespace std;
 
-void ReverseWord(string& sentence){
+//Below code for "Khan is Name My" 
+void ReverseWord(string& sentence){ 
     string word = "",result =" ";
     int size = sentence.length();
-  
-    //for (int i = size -1;  i>=0; i--){ // This for loop for " yM emaN si nahK" , each word reverse in sentences, rest of the thing is same. 
-    for (int i = 0;  i<(size); i++){
-        char ch=sentence[i];
-        //cout<<" ch :"<<ch<<" "<<"len"<<len;
-        //cout<<"\nsentence :"<<sentence[len];
+     for(auto& ch : str) {
         if (ch != ' '){
-            word = ch+word;
-         
-            //cout<<" Word :"<<word;
-        }else{
-            //used ternary operator; ' '+word;
-            result +=(result=="")?word : ' '+word ; 
-           //result +=(result==""?word:' '+word);
-           /*if (result==""){
-               result=word;
-           }else {
-               result+=' '+word;
-           }*/
-    
+            word +=ch;
+        }else{ // space occurs
+            result = (result=="") ? word : word+ ' '+result ;
             word ="";
-        }
-        
-    }
-    result +=' ' +word ;
-    cout<<"\n result="<<result<<"\n";
+        }// ch occurs
+    }//for
+    result = word+ ' '+result ;
+    cout<<"Result :"<<result;
     sentence ="";
     sentence=result;
+}
+
+//Each word reverse yM emaN si nahK .
+//only  for start from last character, rest of code is same.
+void ReverseWord(string& str) {
+    string result ="", word =""; 
+    for (int i = str.length()-1; i>=0; --i){
+        if (str[i] !=  ' '){
+            word += str[i];
+        } else {// space occurs 
+          result =(result.empty()) ? word : word +' ' +result;   
+          word ="";
+        }
+    }//for
+    result = word +' ' +result;   
+    cout<<"Result :"<<result;
+   
 }
 
 int main()
@@ -54,28 +56,3 @@ int main()
 }
 ========================================================
   
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
-
-int main() {
-    // Write C++ code here
-    string str ="My Name is Khan";
-    string result ="";
-     string word ="";
-    for (int i = str.length()-1; i>=0;--i){
-        if (str[i] !=' '){
-            word = str[i] + word;
-        }else {
-            cout<<"\n"<<word;
-            //result=result.empty()? word : result+' '+word;
-         // result += (result=="" ? "":" ")+word ; // more understand 
-          result += result.empty()? word : ' '+word;
-            word ="";
-        }
-    }
-     result += ' '+word;  // last word
-     cout<<"\n"<<result;
-    return 0;
-}

@@ -88,6 +88,10 @@ Return fraq;
 
 
 Pull, fetch 
+=> The easiest way to remember it:
+
+git fetch = “Show me what changed on remote.”
+git pull = “Get the changes and apply them to my branch.”
 
 
 

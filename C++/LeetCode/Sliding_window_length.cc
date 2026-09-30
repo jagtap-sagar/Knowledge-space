@@ -31,7 +31,8 @@ int main()
      //for (ch : s) {
      for (int right =0; right < s.size() ; ++right) {
         cout<<"\n right :"<<right << " s[right] :"<<s[right]; 
-        while(window.count(s[right])) {
+        while(window.count(s[right])) { //which equivalent while (window.find(s[right]) != window.end()) {
+              // check given char present in set or not.
              cout<<"\n left :"<<left << " s[left] :"<<s[left]<<"\n";
           
             window.erase(s[left]);
@@ -40,7 +41,7 @@ int main()
             cout<< "=="<<ch ;
             left++;
         }   
-        
+        // not match in set then add into set.
         window.insert(s[right]) ;
         
         cout<<"\n ------------------------- :";

@@ -1,0 +1,5 @@
+1. check valid ip or not.
+2. remove from vector even data.(erase(remove() used)
+3. vector invalidate
+4. what address sanitizer.
+5. bit set 

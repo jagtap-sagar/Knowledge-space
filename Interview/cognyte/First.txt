@@ -1,0 +1,24 @@
+1. class buffer {
+  char* data_;
+  int size_;
+//write, copy constructor, assignment operator, move constructor 
+};
+2. class Connection {
+public :
+virtual ~Connection() {
+  close();
+}
+virtual void close() =0;
+};
+class TCPConnection: public  Connection{
+public : 
+void close() override {
+  
+}
+};
+
+int main() {
+  Connection *ptr = new TCPConnection();
+}
+3.producer & consumer using thread
+4.

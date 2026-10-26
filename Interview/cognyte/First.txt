@@ -24,3 +24,4 @@ int main() {
 4. Why did you used notify_one, why not notify_all?
 5. Why do we return *this from assignment operator in c++?
 6. In exe how to see number of files it includes like xml, json ? what is command for that?
+=> sudo lsof -p 1234 (pid)

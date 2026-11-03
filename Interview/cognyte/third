@@ -1,0 +1,43 @@
+1. When you hit in URL in the browser, what happen?
+2. Why are you looking for this job?
+3. What expect from this job ?
+4. Do you know RTP protocol,
+5. Which protocol do know => my answers was NFS3, SIP protocol .
+6. What packet contain => packet contion source, destination, payload (actual data) , sequence number.
+7. During code review , you suggest some changes, but junior not agree, I written code without you suggestion.
+  What will you do . =>> my answers was - I again explain why this code required, I will expalin existing Architecture, 
+You code might be work locally, production caused crash , so this validation is required. 
+
+==========================================================================================
+coding interview 
+1. I have c++ template class , I have one static int variable inside class, so when class instantiation like int, char, double then for each instantiation new copy created 
+for static variable also new copy created or static variable remain same for each instantiation?
+
+template <class T> 
+class Mydata {
+static int id;
+//it should return unique id for each data type 
+};
+2. std::transform 
+std::string text = "Hello, World!";
+
+    // Transform the string to uppercase in-place
+    std::transform(text.begin(), text.end(), text.begin(), [](unsigned char c) {
+        return std::toupper(c);
+    });
+
+    std::cout << text << std::endl; // 
+3. million packet received per second,how do process them.
+=> My answer was, I put in queue, create thread for each packet, thread will do validation, process them , each thread detached thread 
+so output write into file/or external memory or struct.
+4. for above question other than thread
+=> my answers, I used fork, to create new process then used execv to process each packets.
+5. class Mystring {
+  string* m_name;
+  void set(string name {
+ } 
+string Get() {  // here I return & (ref) ,instead of copy so return just m_name;
+  return *m_name;
+}
+
+// here destuctor is missing (I told to interviewer )

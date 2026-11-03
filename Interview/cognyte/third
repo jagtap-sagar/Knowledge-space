@@ -41,3 +41,4 @@ string Get() {  // here I return & (ref) ,instead of copy so return just m_name;
 }
 
 // here destuctor is missing (I told to interviewer )
+6. Shared_ptr are thread safe?
